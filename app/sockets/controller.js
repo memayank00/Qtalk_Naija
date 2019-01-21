@@ -542,7 +542,7 @@ class Sockets extends SocketController{
 								console.log("error-----1 ",error);
 							});
 						}else{
-							console.log('deviceType==2---> Android',);
+							//console.log('deviceType==2---> Android',);
 							/*send pushMessagepush notification to Android device*/
 							this.push.FCM(
 								tokenData.deviceToken, 

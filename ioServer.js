@@ -24,11 +24,11 @@ class ioServer {
 		this.server = http.createServer(this.app);
 		var sslOptions = {};
 	      if( process.env.NODE_ENV === 'production' ){
-	          sslOptions={
+	          /*sslOptions={
 	              cert : fs.readFileSync('/home/trackingapp/tracking-app-ssl/trackingapp.com.crt'),
 	              key: fs.readFileSync('/home/trackingapp/tracking-app-ssl/trackingapp.com.key'),
 	              ca: fs.readFileSync('/home/trackingapp/tracking-app-ssl/trackingapp.com_bundle.crt')
-	          };
+	          };*/
 	      }
         this.httpsServer = https.createServer(sslOptions,this.app);
 		/*init helmets for securing http headers*/
@@ -36,17 +36,17 @@ class ioServer {
 		/*init cors for multiple origin requests*/
 		this.cors   = cors();
 		/*init socket instance*/
-		if( process.env.NODE_ENV === 'production' ){
+		/*if( process.env.NODE_ENV === 'production' ){
 			this.io = socketio(this.httpsServer, {
 				pingInterval : 2000,
 				pingTimeout : 5000
 			});
-		}else{
+		}else{*/
 			this.io = socketio(this.server, {
 				pingInterval : 2000,
 				pingTimeout : 5000
 			});
-		}
+		/*}*/
 
 		this.socketCont = new socketController(this.io);
 		

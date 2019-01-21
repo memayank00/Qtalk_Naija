@@ -1,0 +1,176 @@
+/*Media Query Mixing*/
+/*Overlay Mixin*/
+/*Color*/
+/*white-box Mixin*/
+/*blog heading Mixin*/
+.findFrdBg {
+  background: #fff;
+  box-shadow: #e5e5e5 0 10px 10px 0;
+  position: relative; }
+  @media (max-width: 991px) {
+    .findFrdBg {
+      padding-bottom: 10px; } }
+  .findFrdBg .findfrdHd {
+    font-size: 20px;
+    color: #000000;
+    line-height: 50px;
+    font-weight: 500; }
+    @media (max-width: 767px) {
+      .findFrdBg .findfrdHd {
+        font-size: 16px;
+        line-height: 30px; } }
+  .findFrdBg .findSrchBx .form-group {
+    margin-bottom: 0; }
+    .findFrdBg .findSrchBx .form-group input {
+      width: 100%;
+      height: 50px;
+      border-radius: 0;
+      border: 0;
+      border-left: #ccc solid 1px;
+      border-right: #ccc solid 1px; }
+      @media (max-width: 767px) {
+        .findFrdBg .findSrchBx .form-group input {
+          border: #ccc solid 1px; } }
+      @media (max-width: 479px) {
+        .findFrdBg .findSrchBx .form-group input {
+          height: 40px; } }
+    .findFrdBg .findSrchBx .form-group button {
+      background: no-repeat;
+      border: 0;
+      position: absolute;
+      right: 10px;
+      top: 7px; }
+      @media (max-width: 479px) {
+        .findFrdBg .findSrchBx .form-group button {
+          top: 3px; } }
+  .findFrdBg .addfrdBx {
+    padding-top: 10px;
+    text-align: right; }
+    @media (max-width: 767px) {
+      .findFrdBg .addfrdBx {
+        text-align: left; } }
+    .findFrdBg .addfrdBx a {
+      display: inline-block;
+      color: #666;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 30px;
+      padding: 0 0 0 20px; }
+      .findFrdBg .addfrdBx a:hover {
+        color: #0e8bff; }
+      @media (max-width: 991px) {
+        .findFrdBg .addfrdBx a {
+          font-size: 12px;
+          line-height: 20px;
+          padding-left: 10px; } }
+      @media (max-width: 767px) {
+        .findFrdBg .addfrdBx a {
+          font-size: 14px;
+          padding-left: 0;
+          padding-right: 15px; } }
+      @media (max-width: 767px) {
+        .findFrdBg .addfrdBx a {
+          font-size: 13px;
+          padding-right: 10px; } }
+      .findFrdBg .addfrdBx a img {
+        display: inline-block;
+        vertical-align: top; }
+        @media (max-width: 991px) {
+          .findFrdBg .addfrdBx a img {
+            width: 22px; } }
+
+.dashBg {
+  background: url(/assets/images/dashBg.png) top center no-repeat;
+  background-size: cover;
+  padding: 50px 0; }
+  .dashBg .addFrdInn {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: #ccc 0 2px 5px 0; }
+    @media (max-width: 991px) {
+      .dashBg .addFrdInn {
+        padding: 10px; } }
+    @media (max-width: 479px) {
+      .dashBg .addFrdInn {
+        padding: 30px 0; } }
+    @media (max-width: 479px) {
+      .dashBg .addFrdInn .row {
+        margin: 0 -10px; } }
+    .dashBg .addFrdInn .frdListImg img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%; }
+      @media (max-width: 991px) {
+        .dashBg .addFrdInn .frdListImg img {
+          width: 55px;
+          height: 55px; } }
+    .dashBg .addFrdInn .frdListName {
+      padding: 0px; }
+      .dashBg .addFrdInn .frdListName strong {
+        font-size: 22px;
+        font-weight: 500;
+        display: block;
+        line-height: 25px; }
+        @media (max-width: 1199px) {
+          .dashBg .addFrdInn .frdListName strong {
+            font-size: 18px; } }
+        @media (max-width: 991px) {
+          .dashBg .addFrdInn .frdListName strong {
+            font-size: 14px;
+            line-height: 20px; } }
+      .dashBg .addFrdInn .frdListName small {
+        display: block;
+        font-size: 18px;
+        color: #999; }
+        @media (max-width: 1199px) {
+          .dashBg .addFrdInn .frdListName small {
+            font-size: 15px; } }
+        @media (max-width: 991px) {
+          .dashBg .addFrdInn .frdListName small {
+            font-size: 12px; } }
+      .dashBg .addFrdInn .frdListName span {
+        font-size: 18px;
+        display: block;
+        padding-top: 8px; }
+        @media (max-width: 1199px) {
+          .dashBg .addFrdInn .frdListName span {
+            font-size: 15px; } }
+        @media (max-width: 991px) {
+          .dashBg .addFrdInn .frdListName span {
+            font-size: 13px; } }
+    .dashBg .addFrdInn .frdListBtn-new {
+      text-align: right;
+      padding-top: 5px; }
+      .dashBg .addFrdInn .frdListBtn-new a {
+        display: block;
+        line-height: 22px;
+        padding: 8px 10px;
+        text-align: center;
+        border: #d3d3d3 solid 1px;
+        font-size: 13px;
+        border-radius: 3px;
+        margin-bottom: 5px; }
+        .dashBg .addFrdInn .frdListBtn-new a:hover {
+          background: #f5f5f5; }
+        @media (max-width: 991px) {
+          .dashBg .addFrdInn .frdListBtn-new a {
+            padding: 5px 5px; } }
+        @media (max-width: 479px) {
+          .dashBg .addFrdInn .frdListBtn-new a {
+            padding: 5px 0; } }
+      .dashBg .addFrdInn .frdListBtn-new .send_reqBtn {
+        color: #0e8bff; }
+        @media (max-width: 991px) {
+          .dashBg .addFrdInn .frdListBtn-new .send_reqBtn {
+            font-size: 11px; } }
+      .dashBg .addFrdInn .frdListBtn-new .frdMsgBtn {
+        color: #ff9f42; }
+        @media (max-width: 991px) {
+          .dashBg .addFrdInn .frdListBtn-new .frdMsgBtn {
+            font-size: 11px; } }
+      .dashBg .addFrdInn .frdListBtn-new .locatBtn img {
+        font-size: px;
+        width: 16px;
+        margin-right: 5px; }

@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":2,"key":{"_id":1},"name":"_id_","ns":"i_dispatch.posts"},{"v":2,"unique":true,"key":{"slug":1},"name":"slug_1","ns":"i_dispatch.posts","background":true},{"v":2,"key":{"faq_category":1},"name":"faq_category_1","ns":"i_dispatch.posts","sparse":true,"background":true}]}

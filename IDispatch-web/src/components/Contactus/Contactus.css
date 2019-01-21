@@ -1,0 +1,125 @@
+/*Media Query Mixing*/
+/*Overlay Mixin*/
+/*Color*/
+/*white-box Mixin*/
+/*blog heading Mixin*/
+.aboutBanner {
+  background: url("/assets/images/about-banner.png") center center no-repeat;
+  background-size: cover;
+  height: 106px; }
+  .aboutBanner .aboutBanInn {
+    position: relative; }
+    .aboutBanner .aboutBanInn .aboutBanBx {
+      text-align: center;
+      font-size: 36px;
+      text-transform: uppercase;
+      color: #fff;
+      font-weight: 600;
+      line-height: 106px; }
+      @media (max-width: 767px) {
+        .aboutBanner .aboutBanInn .aboutBanBx {
+          line-height: 30px;
+          font-size: 24px;
+          padding-top: 25px; } }
+    .aboutBanner .aboutBanInn .breatcrum_Outer {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      line-height: 30px;
+      color: #fff;
+      margin-top: -15px; }
+      @media (max-width: 767px) {
+        .aboutBanner .aboutBanInn .breatcrum_Outer {
+          position: relative;
+          left: 0;
+          top: 0;
+          line-height: 30px;
+          color: #fff;
+          margin-top: 0px; } }
+      .aboutBanner .aboutBanInn .breatcrum_Outer .breadcrumb {
+        background: none !important;
+        padding: 0;
+        margin: 0;
+        color: #fff; }
+        @media (max-width: 767px) {
+          .aboutBanner .aboutBanInn .breatcrum_Outer .breadcrumb {
+            text-align: center;
+            display: block; } }
+        .aboutBanner .aboutBanInn .breatcrum_Outer .breadcrumb .breadcrumb-item {
+          color: #fff;
+          font-size: 16px; }
+          .aboutBanner .aboutBanInn .breatcrum_Outer .breadcrumb .breadcrumb-item:hover {
+            color: #ff9d3d; }
+        .aboutBanner .aboutBanInn .breatcrum_Outer .breadcrumb .breadcrumb-item:first-child {
+          color: #ff9d3d; }
+        .aboutBanner .aboutBanInn .breatcrum_Outer .breadcrumb .breadcrumb-item:before {
+          color: #fff; }
+
+.contHd {
+  color: #2196f3;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding-bottom: 30px; }
+  @media (max-width: 479px) {
+    .contHd {
+      padding-bottom: 10px;
+      font-size: 18px; } }
+
+@media (max-width: 767px) {
+  .contfrmOuter {
+    padding-bottom: 30px; } }
+
+.contfrmOuter .form-group {
+  margin-bottom: 25px; }
+  @media (max-width: 479px) {
+    .contfrmOuter .form-group {
+      margin-bottom: 15px; } }
+  .contfrmOuter .form-group input {
+    height: 49px;
+    border: #e8e8e8 solid 1px;
+    border-radius: 0;
+    padding: 0 10px;
+    font-size: 15px;
+    font-weight: 400; }
+    @media (max-width: 479px) {
+      .contfrmOuter .form-group input {
+        height: 40px;
+        font-size: 13px; } }
+    .contfrmOuter .form-group input:focus {
+      border: #2196f3 solid 1px;
+      -webkit-box-shadow: 0 0 0 1px #2196f3;
+      box-shadow: 0 0 0 1px #2196f3; }
+  .contfrmOuter .form-group textarea {
+    height: 150px;
+    border: #e8e8e8 solid 1px;
+    border-radius: 0;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 400;
+    resize: none; }
+    @media (max-width: 479px) {
+      .contfrmOuter .form-group textarea {
+        height: 100px;
+        font-size: 13px; } }
+    .contfrmOuter .form-group textarea:focus {
+      border: #2196f3 solid 1px;
+      -webkit-box-shadow: 0 0 0 1px #2196f3;
+      box-shadow: 0 0 0 1px #2196f3; }
+
+.contfrmOuter button {
+  background: #ff9d3d;
+  border: #ff9d3d solid 3px;
+  color: #fff;
+  height: 49px;
+  font-size: 18px !important;
+  border-radius: 25px !important;
+  margin-top: 10px; }
+  @media (max-width: 479px) {
+    .contfrmOuter button {
+      height: 40px;
+      font-size: 15px !important;
+      margin-top: 0px; } }
+  .contfrmOuter button:hover, .contfrmOuter button:focus {
+    background: #2196f3;
+    border: #2196f3 solid 3px; }

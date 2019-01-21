@@ -1,0 +1,178 @@
+@import "assets/css/mixin.scss";
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800");
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  list-style: none;
+}
+body {
+  font-size: 15px;
+  line-height: normal;
+  color: #333333;
+  font-family: "Poppins", sans-serif;
+}
+a {
+  outline: none;
+  text-decoration: none;
+  color: #333;
+}
+a:hover {
+  text-decoration: none !important;
+}
+input,
+textarea,
+select {
+  font-size: 14px;
+  color: #000;
+  vertical-align: middle;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+  resize: none;
+}
+input[type="button"],
+input[type="submit"] {
+  -webkit-transition: ease-in-out 0.3s;
+  -moz-transition: ease-in-out 0.3s;
+  -ms-transition: ease-in-out 0.3s;
+  -o-transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.3s;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.transition {
+  -webkit-transition: ease-in-out 0.3s;
+  -moz-transition: ease-in-out 0.3s;
+  -ms-transition: ease-in-out 0.3s;
+  -o-transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.3s;
+}
+img {
+  border: none;
+  vertical-align: top;
+  max-width: 100%;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+.clearfix:after {
+  clear: both;
+}
+.dashBg{min-height:700px;}
+/*Start header*/
+.headerBg {
+  height: 72px;
+  @include respond-to(media-md) {
+    height: 55px;
+    text-align: center;
+  }
+  button.btn.btn-danger {
+    display: none;
+  }
+}
+
+.headNavOuter {
+  text-align: right;
+  padding-top: 15px;
+  @include respond-to(media-md) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+  @include respond-to(media-xs) {
+    padding-top: 0;
+  }
+}
+.logoBx {
+  padding-top: 20px;
+  text-align: left;
+  @include respond-to(media-md) {
+    padding-top: 7px;
+
+  }
+  img {
+    @include respond-to(media-xs) {
+      max-width: 200px;
+    }
+  }
+}
+body{
+	.modal-open{
+		padding-right:15px !important;
+	}
+}
+.nav {
+  
+  .nav-item {
+    display: inline-block;
+    .nav-link {
+      display: block;
+      padding: 6px 12px;
+      font-size: 16px;
+      font-weight: 600;
+      color: $primary-color;
+      @include respond-to(media-xl) {
+        padding: 6px 5px;
+      }
+      @include respond-to(media-lg) {
+        padding: 6px 5px;
+        font-size: 10px !important;
+      }
+      @include respond-to(media-xs) {
+        font-size: 12px !important;
+        padding: 6px 8px 0 8px;
+      }
+    }
+    .nav-link:hover {
+      text-decoration: none;
+      color: #blue-color !important;
+    }
+  }
+}
+.navright {
+  display: inline-block;
+  padding-left: 10px;
+
+  button {
+    display: inline-block;
+    color: $primary-color;
+    border: $button-color solid 2px;
+    line-height: 36px;
+    padding: 0 20px;
+    border-radius: 30px;
+    margin-left: 15px;
+    font-weight: 600;
+    font-size: 16px;
+    background: $white-color;
+    @include respond-to(media-xl) {
+      padding: 0 15px;
+    }
+    @include respond-to(media-lg) {
+      padding: 0 14px;
+      margin-left: 10px;
+      font-size: 14px;
+      border-width: 1px;
+      font-weight: 500;
+    }
+    @include respond-to(media-xs) {
+      border-radius: 3px;
+      font-size: 13px;
+      line-height: 30px;
+      font-weight: 300;
+    }
+  }
+  button:hover {
+    background: $button-color;
+    color: $white-color;
+  }
+}
+div.App + div button.btn.btn-danger {
+    display: none;
+}

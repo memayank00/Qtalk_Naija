@@ -1,0 +1,196 @@
+@import 'assets/css/mixin.scss';
+
+
+
+.findFrdBg {
+    background: #fff;
+    box-shadow: #e5e5e5 0 10px 10px 0;
+    position: relative;
+    @include respond-to(media-lg) {
+			padding-bottom: 10px;
+		}
+    .findfrdHd {
+		font-size: 20px;
+		color: #000000;
+		line-height: 50px;
+		font-weight: 500;
+		@include respond-to(media-md) {
+			font-size: 16px;
+			line-height: 30px;
+
+		}
+	}
+	.trackingBy{
+		color: #999; 
+		padding-top: 12px;
+		text-align: right;
+		a{
+			display: inline-block; 
+			color: #999; 
+			font-size: 16px; 
+			font-weight: 300; 
+			margin: 0 3px;
+			@include respond-to(media-xs) {
+				font-size: 13px;
+			}
+			span{ 
+				color:#118eff;
+			}
+			&:hover{
+				color:#000;
+				text-decoration: underline;
+			}
+		}
+
+		.trackingActive{
+			color: #0a8fff;
+			font-weight: 500;
+		}
+	}
+
+}
+.dashBg{ 
+	background: url(/assets/images/dashBg.png) top center no-repeat; 
+	background-size: cover; 
+	padding: 50px 0;
+	.addFrdInn.frdReqList {
+    	background: #fff;
+		padding: 20px 20px 40px 20px;
+		border-radius: 5px;
+		margin-bottom: 20px;
+		box-shadow: #ccc 0 2px 5px 0;
+		position: relative;
+		.closeBx {
+			position: absolute;
+			bottom: 0px;
+			background: #eee;
+			left: 0;
+			right: 0;
+			width: 100%;
+			line-height: 24px;
+			text-align: center;
+			border-radius: 0 0 5px 5px;
+			a{
+				color: #8f8f8f;
+				font-size: 14px;
+				@include respond-to(media-md) {
+					font-size: 12px;
+				}
+			}
+		}
+		@include respond-to(media-lg) {
+			padding: 10px;
+			min-height: 115px;
+		}
+		@include respond-to(media-md) {
+			min-height: 115px;
+		}
+		.frdListImg{
+			img{
+			    width: 90px;
+			    height: 90px;
+			    border-radius: 50%;
+			    @include respond-to(media-lg) {
+			    	width: 55px;
+			    	height: 55px;
+			    }
+			    @include respond-to(media-xs) {
+			    	width: 45px;
+			    	height: 45px;
+			    }
+			}
+		}
+		.frdListName{
+			padding:23px 0 0 0;
+			@include respond-to(media-lg) {
+		    	padding:10px 0 0 0;
+		    }
+		    @include respond-to(media-xs) {
+		    	padding: 0px;
+		    }
+			strong{
+			    font-size: 22px;
+			    font-weight: 500;
+			    display: block;
+			    line-height: 25px;
+			    @include respond-to(media-xl) {
+		    		font-size: 18px;
+		    	}
+		    	@include respond-to(media-lg) {
+		    		font-size: 14px;
+		    		line-height: 20px;
+		    	}
+		    	@include respond-to(media-xs) {
+		    		font-size: 12px;
+		    		line-height: 20px;
+		    	}
+			}
+			small{
+			    display: block;
+			    font-size: 18px;
+			    color: #999;
+			    padding-bottom: 8px;
+			    @include respond-to(media-xl) {
+			    	font-size: 15px;
+			    }
+			    @include respond-to(media-lg) {
+			    	font-size: 12px;
+			    }
+			    @include respond-to(media-xs) {
+			    	font-size: 10px;
+			    }
+			}
+			a{
+				color: #0e8bff; 
+				font-size: 15px; 
+				line-height: 21px;
+				@include respond-to(media-lg) {
+					font-size: 12px;
+					line-height: 18px;
+				}
+			}
+		}
+		.frdListBtn{
+			text-align: left;
+			padding-top: 10px;
+			@include respond-to(media-md) {
+				padding-top: 5px;
+			}
+			@include respond-to(media-xs) {
+				padding-left: 0px;
+			}
+			a{
+				font-size: 14px; 
+				display: block; 
+				line-height: 16px; 
+				border: #dcdcdc solid 1px; 
+				padding: 7px 12px; 
+				border-radius: 3px;
+				width:105px;
+				margin-bottom: 7px;
+				float: right;
+				@include respond-to(media-lg) {
+					font-size: 12px;
+					padding:5px 8px; 
+					width: 90px;
+
+				}
+				@include respond-to(media-xs) {
+					font-size: 11px;
+					padding:4px 5px; 
+					width: 80px;
+				}
+				img {
+					vertical-align: middle;
+				}
+			}
+			.remove_Btn {
+				color: #f14848; 
+			}
+			.acceptBtn{
+				color: #3fd589;
+			}
+		}
+   	}
+}
+

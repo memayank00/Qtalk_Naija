@@ -1,0 +1,198 @@
+/*Media Query Mixing*/
+/*Overlay Mixin*/
+/*Color*/
+/*white-box Mixin*/
+/*blog heading Mixin*/
+.getappOuter {
+  background: url("../../../assets/images/get_app_bg.jpg") no-repeat center center;
+  width: 100%;
+  background-size: cover;
+  height: 310px;
+  padding: 70px 0; }
+  @media (max-width: 767px) {
+    .getappOuter {
+      height: auto;
+      padding: 40px 0; } }
+  .getappOuter .getappInn {
+    text-align: center;
+    color: #fff;
+    font-size: 18px; }
+    @media (max-width: 767px) {
+      .getappOuter .getappInn {
+        font-size: 14px; } }
+    .getappOuter .getappInn h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      font-weight: 600; }
+      @media (max-width: 767px) {
+        .getappOuter .getappInn h2 {
+          font-size: 20px; } }
+    .getappOuter .getappInn span {
+      display: block;
+      font-size: 16px;
+      font-weight: 400;
+      padding-bottom: 30px; }
+      @media (max-width: 767px) {
+        .getappOuter .getappInn span {
+          padding-bottom: 10px;
+          font-size: 14px; } }
+    .getappOuter .getappInn i {
+      display: block;
+      padding-top: 30px; }
+      .getappOuter .getappInn i a {
+        display: inline-block;
+        margin: 0 15px; }
+        @media (max-width: 767px) {
+          .getappOuter .getappInn i a {
+            max-width: 110px; } }
+
+.contactBx {
+  padding: 90px 0 40px 0; }
+  @media (max-width: 767px) {
+    .contactBx {
+      padding: 40px 0; } }
+  .contactBx .contactInn {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto; }
+    .contactBx .contactInn h2 {
+      font-size: 28px;
+      font-weight: 600; }
+      @media (max-width: 767px) {
+        .contactBx .contactInn h2 {
+          font-size: 20px; } }
+    .contactBx .contactInn p {
+      font-size: 16px;
+      font-weight: 300;
+      color: #525252; }
+      @media (max-width: 767px) {
+        .contactBx .contactInn p {
+          font-size: 14px; } }
+    .contactBx .contactInn strong {
+      display: block;
+      font-size: 16px;
+      font-weight: 600;
+      padding-top: 10px;
+      padding-bottom: 10px; }
+      @media (max-width: 767px) {
+        .contactBx .contactInn strong {
+          font-size: 14px;
+          padding-bottom: 5px;
+          padding-top: 0px; } }
+    .contactBx .contactInn span a {
+      color: #2196f3; }
+      @media (max-width: 767px) {
+        .contactBx .contactInn span a {
+          font-size: 14px; } }
+
+.footerTopBx {
+  background: #2196f3;
+  padding: 35px 0; }
+  @media (max-width: 767px) {
+    .footerTopBx {
+      padding: 20px 0; } }
+  .footerTopBx .newsletterInn {
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    font-weight: 500;
+    line-height: 50px; }
+    @media (max-width: 991px) {
+      .footerTopBx .newsletterInn {
+        font-size: 18px; } }
+    @media (max-width: 767px) {
+      .footerTopBx .newsletterInn {
+        line-height: normal;
+        padding-bottom: 5px; } }
+    .footerTopBx .newsletterInn .newslettFrm {
+      display: inline-block;
+      width: 500px;
+      position: relative;
+      margin-left: 20px;
+      vertical-align: top; }
+      @media (max-width: 991px) {
+        .footerTopBx .newsletterInn .newslettFrm {
+          width: 400px; } }
+      @media (max-width: 479px) {
+        .footerTopBx .newsletterInn .newslettFrm {
+          width: 100%;
+          margin-left: 0; } }
+      .footerTopBx .newsletterInn .newslettFrm .form-group {
+        margin-bottom: 0; }
+        .footerTopBx .newsletterInn .newslettFrm .form-group input {
+          width: 100%;
+          border-radius: 25px;
+          height: 50px;
+          border: 0;
+          padding: 0 120px 0 20px;
+          font-weight: 300; }
+          @media (max-width: 479px) {
+            .footerTopBx .newsletterInn .newslettFrm .form-group input {
+              height: 40px;
+              padding: 0 90px 0 10px;
+              border-radius: 3px;
+              font-size: 14px; } }
+      .footerTopBx .newsletterInn .newslettFrm button {
+        width: 110px;
+        height: 50px;
+        font-size: 18px !important;
+        color: #fff;
+        font-weight: 500;
+        border-radius: 25px !important;
+        position: absolute;
+        right: 0;
+        top: 0;
+        cursor: pointer; }
+        @media (max-width: 479px) {
+          .footerTopBx .newsletterInn .newslettFrm button {
+            width: 80px;
+            font-size: 14px !important;
+            height: 40px;
+            border-radius: 3px !important;
+            padding: 0; } }
+
+.footerBotBx {
+  background: #000;
+  padding: 30px 0; }
+  @media (max-width: 479px) {
+    .footerBotBx {
+      padding: 20px 0 10px 0; } }
+  @media (max-width: 767px) {
+    .footerBotBx .footNav {
+      text-align: center;
+      padding-bottom: 10px; } }
+  .footerBotBx .footNav a {
+    font-size: 13px;
+    color: #999;
+    padding: 0 20px 0 0;
+    line-height: 32px; }
+    @media (max-width: 991px) {
+      .footerBotBx .footNav a {
+        padding-right: 10px;
+        font-size: 12px;
+        line-height: 18px; } }
+    .footerBotBx .footNav a:hover {
+      color: #ff9d3d; }
+  .footerBotBx .footsocial {
+    text-align: right; }
+    @media (max-width: 991px) {
+      .footerBotBx .footsocial {
+        text-align: center; } }
+    .footerBotBx .footsocial a {
+      display: inline-block;
+      padding: 0 7px;
+      vertical-align: top; }
+      @media (max-width: 991px) {
+        .footerBotBx .footsocial a {
+          padding: 0 2px; } }
+      @media (max-width: 767px) {
+        .footerBotBx .footsocial a {
+          padding: 0 7px; } }
+      .footerBotBx .footsocial a .img {
+        display: inline-block; }
+      .footerBotBx .footsocial a .over {
+        display: none; }
+      .footerBotBx .footsocial a:hover .img {
+        display: none; }
+      .footerBotBx .footsocial a:hover .over {
+        display: inline-block; }

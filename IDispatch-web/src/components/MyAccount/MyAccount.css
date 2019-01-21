@@ -1,0 +1,175 @@
+/*Media Query Mixing*/
+/*Overlay Mixin*/
+/*Color*/
+/*white-box Mixin*/
+/*blog heading Mixin*/
+a {
+  cursor: pointer; }
+
+button {
+  cursor: pointer; }
+
+.dashboardMapBg {
+  background: url("/assets/images/dashboard-map2.png") center center no-repeat;
+  background-size: cover;
+  width: 100%;
+  padding: 110px 0;
+  height: 100% !important;
+  position: fixed !important;
+  overflow: auto; }
+  @media (max-width: 639px) {
+    .dashboardMapBg {
+      padding: 40px 10px; } }
+  .dashboardMapBg .myaccountBx {
+    background: #fff;
+    max-width: 570px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: #ccc 3px 3px 3px 0; }
+    .dashboardMapBg .myaccountBx .myaccHd {
+      font-size: 20px;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding-bottom: 30px; }
+      @media (max-width: 479px) {
+        .dashboardMapBg .myaccountBx .myaccHd {
+          padding-bottom: 10px; } }
+      .dashboardMapBg .myaccountBx .myaccHd span {
+        float: right; }
+        .dashboardMapBg .myaccountBx .myaccHd span .backBtn {
+          font-size: 15px;
+          padding: 7px 15px;
+          background: #999;
+          color: #fff;
+          border-radius: 3px;
+          border: 0; }
+    .dashboardMapBg .myaccountBx .myaccImgBx {
+      position: relative;
+      min-height: 155px;
+      border-bottom: #e5e5e5 solid 1px;
+      padding-left: 155px; }
+      @media (max-width: 479px) {
+        .dashboardMapBg .myaccountBx .myaccImgBx {
+          padding-left: 105px;
+          min-height: 110px; } }
+      .dashboardMapBg .myaccountBx .myaccImgBx i {
+        width: 135px;
+        height: 135px;
+        position: absolute;
+        left: 0;
+        top: 0; }
+        @media (max-width: 479px) {
+          .dashboardMapBg .myaccountBx .myaccImgBx i {
+            width: 90px;
+            height: 90px; } }
+        .dashboardMapBg .myaccountBx .myaccImgBx i img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%; }
+      .dashboardMapBg .myaccountBx .myaccImgBx strong {
+        font-size: 22px;
+        display: block;
+        font-weight: 500;
+        line-height: 28px;
+        padding-top: 35px; }
+        @media (max-width: 479px) {
+          .dashboardMapBg .myaccountBx .myaccImgBx strong {
+            font-size: 18px;
+            padding-top: 20px; } }
+      .dashboardMapBg .myaccountBx .myaccImgBx a {
+        border: #118eff solid 1px;
+        display: inline-block;
+        padding: 5px 15px;
+        margin-top: 7px;
+        border-radius: 2px;
+        color: #118eff !important;
+        font-size: 13px;
+        line-height: 20px; }
+    .dashboardMapBg .myaccountBx .usernameList {
+      position: relative;
+      min-height: 60px;
+      margin-top: 20px !important;
+      padding-bottom: 0px !important;
+      padding-left: 50px; }
+      @media (max-width: 479px) {
+        .dashboardMapBg .myaccountBx .usernameList {
+          padding-left: 35px; } }
+      .dashboardMapBg .myaccountBx .usernameList .form-control {
+        height: 50px; }
+      .dashboardMapBg .myaccountBx .usernameList input {
+        color: #333 !important; }
+      .dashboardMapBg .myaccountBx .usernameList i {
+        position: absolute;
+        left: 0px;
+        top: 7px; }
+        @media (max-width: 479px) {
+          .dashboardMapBg .myaccountBx .usernameList i {
+            top: 3px; } }
+      .dashboardMapBg .myaccountBx .usernameList strong {
+        color: #b2b2b2;
+        font-size: 18px;
+        display: block;
+        font-weight: 400;
+        line-height: 25px; }
+        @media (max-width: 479px) {
+          .dashboardMapBg .myaccountBx .usernameList strong {
+            font-size: 14px;
+            line-height: 20px; } }
+      .dashboardMapBg .myaccountBx .usernameList span {
+        color: #333;
+        line-height: 25px;
+        font-size: 20px;
+        display: block; }
+        @media (max-width: 479px) {
+          .dashboardMapBg .myaccountBx .usernameList span {
+            font-size: 15px; } }
+    .dashboardMapBg .myaccountBx .changepassBx {
+      border-top: #e5e5e5 solid 1px;
+      padding-top: 20px; }
+      .dashboardMapBg .myaccountBx .changepassBx .changepassLeft {
+        float: left; }
+        @media (max-width: 479px) {
+          .dashboardMapBg .myaccountBx .changepassBx .changepassLeft {
+            float: none; } }
+        .dashboardMapBg .myaccountBx .changepassBx .changepassLeft .usernameList {
+          padding-bottom: 0;
+          padding-left: 0px;
+          display: inline-block;
+          margin-right: 10px; }
+          .dashboardMapBg .myaccountBx .changepassBx .changepassLeft .usernameList i {
+            top: 0; }
+          .dashboardMapBg .myaccountBx .changepassBx .changepassLeft .usernameList a {
+            color: #118eff !important;
+            border: #118eff solid 1px;
+            padding: 6px 15px;
+            display: inline-block;
+            line-height: 32px;
+            border-radius: 3px;
+            font-size: 18px; }
+        .dashboardMapBg .myaccountBx .changepassBx .changepassLeft .DelAccount {
+          display: inline-block; }
+      .dashboardMapBg .myaccountBx .changepassBx .changepassRight {
+        float: right;
+        padding-top: 20px; }
+        @media (max-width: 479px) {
+          .dashboardMapBg .myaccountBx .changepassBx .changepassRight {
+            float: none;
+            padding-top: 12px !important; } }
+        .dashboardMapBg .myaccountBx .changepassBx .changepassRight .logoutBtn {
+          border: #ff9f42 solid 1px;
+          background: #fff;
+          color: #ff9f42;
+          height: 47px;
+          padding: 0 30px;
+          font-size: 18px;
+          border-radius: 3px; }
+
+.DelAccBtn {
+  border: #ff0000 solid 1px;
+  color: #ff0000;
+  padding: 7px 15px;
+  font-size: 18px;
+  border-radius: 3px;
+  line-height: 30px;
+  background: #fff; }

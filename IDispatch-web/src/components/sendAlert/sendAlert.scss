@@ -1,0 +1,383 @@
+@import 'assets/css/mixin.scss';
+
+.sendAlert{
+	margin: 40px 100px; 
+	@include respond-to (media-lg){
+		margin: 20px 30px;
+	}
+	@include respond-to(media-xs) {
+		margin: 0px;
+	}
+}
+
+
+
+.newinputDesign input{
+	position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: 0;
+}
+.sendAlertBox {
+    background: #fff;
+    margin-bottom: 20px;
+    padding: 20px 30px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 18px -1px rgba(0,0,0,0.1);
+    position: relative;
+	cursor: pointer;
+	transition:all ease-in .2s;
+	border: 1px solid transparent;
+	@include respond-to(media-sm){
+		margin-bottom: 12px;
+		padding: 20px 20px;
+	}
+
+	h4{
+	margin-bottom: 0;
+		span {
+			font-size: 20px;
+			margin-left: 7px;
+			@include respond-to(media-xs) {
+				font-size: 16px;
+			}
+		}
+	}
+    .right-icon{
+		float: right;
+		opacity:1;
+		transition: all ease-in-out .2s;
+		position: relative;
+		img{
+			filter: grayscale(100%);
+			transition: all ease-in-out .2s;
+		}	
+	}
+}
+
+.sendAlertBoxActive{ 
+	border: 1px solid #ff9f42;
+	.right-icon{
+		opacity: 1;
+		img{
+			filter: grayscale(0%)
+		}
+	}
+}
+ 
+.sendAlertCheck{
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.lastSendAlertBox{ 
+	width: 98%;
+	margin: auto;
+	max-width: 539px;
+}
+
+.sendAlertBtn{
+    background: #ff9f42;
+    color: #fff;
+    width: 100%;
+    border: 0;
+    height: 60px;
+    font-size: 21px;
+    border-radius: 6px;
+    max-width: 250px;
+    font-weight: 500;
+    box-shadow:2px 2px 8px 2px #ffce9f;
+    margin: auto;
+    display: block;
+	margin-top: 30px;
+	cursor: pointer;
+}
+
+.sendAlertToPopupBg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+	z-index: 999;
+	
+	.sendAlertPopupBox {
+		width: 94%;
+		max-width: 490px;
+		background: #fff;
+		margin: auto;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		height: 550px;
+		border-radius: 7px;
+		padding: 20px;
+	}
+}
+
+.send-alert-user-list-section{ 
+	overflow-y: scroll;
+	height: 350px; 
+	width: 100%;
+	@include respond-to(media-sm) {
+		height: 344px;
+}
+
+.chatting-user-box{
+	position: relative;
+	padding: 21px 20px 22px 28px;
+	border-bottom: 1px solid #eee;
+	cursor: pointer;
+	transition: all ease-in-out .2s;
+	&:hover{
+		background: #f8f8f8;
+	}
+
+	@include respond-to(media-lg) {
+		padding: 10px 14px;
+	}
+	
+	img {
+		width: 52px;
+		height:52px;
+		border-radius: 50px;
+		position: absolute;
+		left: 15px;
+		top: 19px;
+
+		@include respond-to(media-lg) {
+			width: 32px;
+			height: 32px;
+			left: 11px;
+			top: 13px;
+		}
+	}
+	.chatting-user-list-text{
+		padding-left: 50px;
+		padding-top: 3px;
+		@include respond-to(media-lg) {
+			padding-left: 38px;
+		}
+		h5 {
+			font-size: 16px;
+			margin-bottom: 3px;
+			font-weight: 500;
+			@include respond-to(media-lg) {
+				font-size: 13px;
+			}
+		}
+		p{
+			margin-bottom: 0;
+			font-size: 14px;
+			color: #999;
+			letter-spacing: 0.5px;
+			@include respond-to(media-lg) {
+				font-size: 11px;
+			}
+		}
+	}
+}
+}
+
+.alertBackBtn{ 
+	text-align: right;
+	a {
+		background: #999;
+		display: inline-block;
+		line-height: 25px;
+		padding: 5px 25px;
+		color: #fff;
+		border-radius: 3px;
+		cursor: pointer;
+		&:hover{
+			background: #333;
+			color:#fff;
+		}
+	}
+}
+
+.sendAlertPopupBox{ 
+	h4{
+		font-size: 19px;
+		margin-bottom: 17px;
+		font-weight: 600
+	}
+	.popup-close-btn{
+		position: absolute;
+		top: 16px;
+		right: 16px;
+		cursor: pointer;
+	}
+}
+
+
+.send-alert-btn-popup{ 
+    background: #ff9f42;
+    color: #fff;
+    width: 100%;
+    border: 0;
+    height: 48px;
+    font-size: 16px;
+    border-radius: 6px;
+    max-width: 160px;
+    font-weight: 500;
+    box-shadow: 2px 2px 8px 2px #ffce9f;
+    margin: auto;
+    display: block;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.serach-bar-on-poup {
+	position: relative;
+	margin-bottom: 10px;
+	input{
+		width: 100%;
+		padding: 10px 19px;
+		border: 1px solid #ddd;
+		box-shadow: 0 0 4px 1px #eee;
+		border-radius: 5px;
+	}
+img{ 
+	position: absolute;
+	right: 15px;
+	top: 12px;
+}
+}
+
+
+/*** custom checkboxes ***/
+
+.checkb-box label{margin-bottom: 0;}
+.checkb-box{
+position: absolute;
+right: 5px;
+top: 30%;
+}
+/* to hide the checkbox itself */
+  input[type="checkbox"] + label:before {
+	font-family: FontAwesome;
+	display: inline-block;
+	font-size: 30px;
+	color: #ccc;
+	@include respond-to (media-sm){
+		font-size: 23px;
+	}
+  }
+  
+  input[type="checkbox"] + label:before {
+	content: "\f096";
+  } /* unchecked icon */
+  input[type="checkbox"] + label:before {
+	letter-spacing: 10px;
+  } /* space between checkbox and label */
+  
+  input[type="checkbox"]:checked + label:before {
+	content: "\f046"; 
+	color: #46ce93;
+  } /* checked icon */
+  input[type="checkbox"]:checked + label:before {
+	letter-spacing: 5px;
+  } /* allow space for check mark */
+
+  .alertbefore:before{ display: none !important; }
+
+
+
+.sendalertHd{
+	width:100%;
+	padding:10px 15px 0 15px;
+	h4{
+	  	background: #fff;
+		margin-bottom: 20px;
+		padding: 20px 30px;
+		border-radius: 4px;
+		-webkit-box-shadow: 2px 2px 18px -1px rgba(0, 0, 0, 0.1);
+		box-shadow: 2px 2px 18px -1px rgba(0, 0, 0, 0.1);
+		position: relative;
+		cursor: pointer;
+		-webkit-transition: all ease-in .2s;
+		-o-transition: all ease-in .2s;
+		transition: all ease-in .2s;
+		border: 1px solid transparent;
+		width:100%;
+		@include respond-to(media-xs) {
+			font-size: 20px;
+			padding:15px;
+		}
+	}
+}
+.sendalertlistInn {
+	padding-left: 90px !important;
+	@include respond-to(media-xs) {
+		padding-left: 30px !important;
+	}
+	.sendAlertBox{
+		label {
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 999;
+			margin: 0;
+			input {
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				margin: 0 !important;
+				opacity: 0;
+				width: 100%;
+				height: 100%;
+				cursor: pointer;
+			}
+		}
+	}
+}
+.paddright0{ padding-right: 0px;}
+.dataPickerNew{ 
+	.outside_container {
+		position: absolute;
+		right: 0;
+		z-index: 999;
+		width: 100%;
+		min-width: 300px;
+		max-width: 200px;
+	}
+}
+
+.preview_container {
+	@include respond-to(media-xs) {
+		position: absolute;
+		left: 10px;
+		height: 50px;
+		line-height: 50px;
+		padding-left: 32px;
+		transform: translateX(-50%);
+		-o-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+		-webkit-transform: translateX(-50%);
+		-moz-transform: translateX(0%);
+		right: 0;
+		width: 112px;
+	}
+}
+.dashBg.sendalertOuter {
+    padding-top: 80px;
+}

@@ -1,0 +1,105 @@
+@import 'assets/css/mixin.scss';
+
+.aboutBanner{
+	background: url("/assets/images/about-banner.png") center center no-repeat; 
+	background-size: cover; 
+	height: 106px;
+		.aboutBanInn {
+			position: relative;
+		    	.aboutBanBx {
+				    text-align: center;
+				    font-size: 36px;
+				    text-transform: uppercase;
+				    color: #fff;
+				    font-weight: 600;
+				    line-height: 106px;
+				     @include respond-to(media-md) {
+						line-height: 30px;
+						font-size: 24px;
+						padding-top: 25px;
+					} 
+				}
+			.breatcrum_Outer {
+			    position: absolute;
+			    left: 0;
+			    top: 50%;
+			    line-height: 30px;
+			    color: #fff;
+			    margin-top: -15px;
+			    @include respond-to(media-md) {
+					position:relative;
+				    left: 0;
+				    top: 0;
+				    line-height: 30px;
+				    color: #fff;
+				    margin-top: 0px;
+				} 
+			    .breadcrumb {
+					background: none !important;
+					padding: 0;
+					margin: 0;
+					color: #fff;
+					@include respond-to(media-md) {
+						text-align: center;
+						display: block;
+					}
+					.breadcrumb-item{
+						color: #fff;
+						font-size: 16px;
+						&:hover{ color:#ff9d3d; }
+					}
+					.breadcrumb-item:first-child{ color:#ff9d3d; }
+					.breadcrumb-item:before{ color: #fff;}
+				}
+			}
+	}
+}
+
+.aboutsection { 
+	padding: 50px 0;
+	@include respond-to(media-xs) {
+		padding: 20px 0;
+	}
+	.list-group-item {
+	    position: relative;
+	    display: block;
+	    padding: 0;
+	    margin-bottom: 0;
+	    background-color: none;
+	    border: 0;
+	    padding-bottom:40px;
+	    @include respond-to(media-xs) {
+	    	padding-bottom: 20px;
+	    }
+	   .list-group-item-heading {
+		    font-size: 24px;
+		    text-transform: uppercase;
+		    font-weight: 600;
+		    margin-bottom: 0;
+		    color: #2196f3;
+		    @include respond-to(media-md) {
+		    	font-size: 20px;
+		    }
+		    @include respond-to(media-xs) {
+		    	font-size: 18px;
+		    }
+		}
+
+		.list-group-item-text {
+		    padding-bottom: 0;
+		    margin-bottom: 0;
+		    font-size: 17px;
+		    font-weight: 300;
+		    color: #525252;
+		    @include respond-to(media-md) {
+		    	font-size: 15px;
+		    }
+		    a{ 
+		    	color: #fb840d;
+		    	&:hover{ color:#2196f3;}
+		    }
+		}
+	}
+}
+
+

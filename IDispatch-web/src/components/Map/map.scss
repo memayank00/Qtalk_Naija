@@ -1,0 +1,46 @@
+.map-pro-box {
+  width: 10%;
+height: 20%;
+}
+.map-prop-detail {
+  float: left;
+}
+.map-pro-box img {
+  width: 50px !important;
+  height: 50px !important;
+  display: block;
+  border-radius: 50%;
+}
+.map-pro-box h3 {
+  font-size: 17px;
+  margin-top: 7px;
+  margin-bottom: 3px;
+}
+.map-pro-box p {
+  margin-bottom: 0;
+  word-wrap: break-word;
+}
+.NewCssMapBg {
+  .map-pro-box{ 
+    .map-prop-price {
+      width: 70% !important;
+    }
+  }
+}
+.map-prop-price {
+  font-size: 18px;
+  font-weight: 500;
+  color: #118eff;
+  float: right;
+  margin-top: 15px;
+}
+.gmnoprint img{
+  border-radius: 50px;
+}
+
+/* ========== Map Css  ====== */
+
+
+
+
+/* =========== */

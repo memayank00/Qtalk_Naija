@@ -1,0 +1,301 @@
+@import 'assets/css/mixin.scss';
+
+.home-banner {
+	position: relative;
+	background: url('../../assets/images/banner_bg.jpg') no-repeat center center;
+	width: 100%;
+	background-size: cover;
+	height: 770px;
+
+	@include respond-to(media-xl) {
+		height: 670px;
+	}
+	@include respond-to(media-lg) {
+		height: 440px;
+	}
+	@include respond-to(media-md) {
+		height: auto;
+	}
+	
+	.bannerLeftCont {
+		padding-top: 250px;
+		h1 {
+			font-size: 44px;
+    		text-transform: uppercase;
+    		color: #fff;
+    		font-weight: 700;
+    		@include respond-to(media-lg) {
+				font-size: 28px;
+			}
+			@include respond-to(media-xs) {
+				font-size: 20px;
+			}
+		}
+		p{
+			font-size: 18px;
+			color: $white-color;
+			@include respond-to(media-lg) {
+				font-size: 15px;
+			}
+			@include respond-to(media-xs) {
+				font-size: 13px;
+			}
+		}
+		 a {
+    		display: inline-block;
+    		margin-right: 20px;
+    		@include respond-to(media-lg) {
+				max-width: 150px;
+				margin-right: 10px;
+			}
+			@include respond-to(media-xs) {
+				max-width:120px; 
+			}
+		}
+		@include respond-to(media-lg) {
+			padding-top: 140px;
+		}
+		@include respond-to(media-md) {
+			padding:70px 0;
+			text-align: center;
+		}
+		@include respond-to(media-xs) {
+			padding:30px 0;
+		}
+
+	}
+	.bannerRightImg {
+		position: relative; 
+		padding-top: 215px;
+		@include respond-to(media-md) {
+			display: none;
+		}
+		img{ 
+			position: relative; 
+			right: -50px;
+			@include respond-to(media-lg) {
+				right: 0;
+			}
+		}
+		@include respond-to(media-lg) {
+			padding-top: 100px;
+		}
+	}
+}
+.welcomeBx {
+    padding: 90px 0 60px;
+    @include respond-to(media-lg) {
+    	padding: 60px 0 40px;
+    }
+    @include respond-to(media-md) {
+    	padding: 40px 0;
+    }
+    .WelcomeCont{
+    	text-align: center;
+    	font-size: 16px; 
+    	line-height: 26px;
+    	color: $primary-color;
+    	font-weight: 300;
+    	@include respond-to(media-md) {
+	    	font-size: 14px;
+	    	line-height: 22px;
+	    }
+
+    	h2{
+    		color: $heading-color; 
+    		font-size: 28px; 
+    		font-weight: 600; 
+    		text-transform: uppercase;
+    		@include respond-to(media-md) {
+		    	font-size: 20px;
+		    }
+    	}
+    }
+}
+.VidSecBx{
+	position: relative;
+	background: url('../../assets/images/video_bg.jpg') no-repeat center center;
+	width: 100%;
+	background-size: cover;
+	height: 375px;
+	@include respond-to(media-lg) {
+    	height: 250px;
+    }
+    @include respond-to(media-md) {
+		height:auto;
+	}
+	.demovidBx {
+	    text-align: center;
+	    color: #fff;
+	    padding:115px 0 0 0;
+	    @include respond-to(media-lg) {
+	    	padding:50px 0 0 0;
+	    }
+	    @include respond-to(media-md) {
+			padding:40px 0;
+		}
+	    h3 {
+		    font-size: 24px;
+		    text-transform: uppercase;
+		    font-weight: 600;
+		    @include respond-to(media-md) {
+				font-size: 20px;
+			}
+		}
+		p{ 
+			font-size: 16px;
+			font-weight: 300;
+			padding-top: 5px;
+			 @include respond-to(media-md) {
+				font-size:14px;
+			}
+		 }
+		i{
+			display: block;
+			padding-top:10px;
+			@include respond-to(media-lg) {
+				padding-top: 0;
+			}
+			a{ display: inline-block; }
+		}
+	}
+}
+.featuresOuter {
+    padding: 80px 0 30px 0;
+    background: #f7f7f7;
+     @include respond-to(media-md) {
+		padding: 40px 0;
+	}
+    .thefeatHd {
+    	font-size: 18px;
+    	padding-bottom: 50px;
+    	@include respond-to(media-md) {
+    		font-size: 16px;
+    		padding-bottom: 30px;
+    	}
+    	h1 {
+		    color:$heading-color;
+		    font-size: 28px;
+		    font-weight: 600;
+		    line-height: 28px;
+		    @include respond-to(media-md) {
+		    	font-size: 20px;
+		    	line-height: 20px;
+		    }
+		}
+	}
+	.featlist ul{
+		@include respond-to(media-md) {
+			margin-bottom: 0px;
+		}
+	}
+	.featlist li{
+	   	display: block;
+	   	position: relative;
+		padding-left: 50px;
+	   	padding-bottom: 20px;
+
+	   	i {
+	   		position: absolute;
+	   		left:0;
+	   		top:0;
+	   	}
+
+	   	strong {
+	   		display: block;
+	   		padding-bottom:7px;
+	   		font-weight: 600;
+			font-size: 16px;
+			line-height: 20px;
+			@include respond-to(media-lg) {
+				font-size: 14px; padding-bottom: 3px;
+			}
+	   	}
+	   	span{
+	   		display: block;
+	   		font-size: 16px;
+			font-weight: 300;
+			color: #525252;
+			@include respond-to(media-lg) {
+				font-size: 14px;
+			}
+	   	}
+	}
+	.feat_right{
+		@include respond-to(media-md) {
+			display: none;
+		}
+	}
+}
+.howitBx {
+    padding: 70px 0 20px 0;
+    @include respond-to(media-md) {
+    	padding: 40px 0;
+    }
+    .howitTopBx {
+	    text-align: center;
+	    h1{
+		    font-size: 28px;
+		    font-weight: 600;
+		    color: #118ffe;
+		    @include respond-to(media-md) {
+		    	font-size: 20px;
+		    }
+		}
+		span{
+		    display: block;
+		    padding-bottom: 40px;
+		    font-size: 18px;
+		     @include respond-to(media-md) {
+		     	font-size: 15px;
+		     }
+
+		}
+		i{
+		    padding-bottom: 40px;
+		    display: block;
+		     @include respond-to(media-md) { display: none; }
+		}
+	}
+
+	.howitList {
+	    text-align: center;
+	    .howlistInn{
+	    	height: 230px;
+	    	@include respond-to(media-sm) {
+	    		height: auto;
+	    		padding-bottom: 20px;
+	    	}
+		    	i {
+			    display: block;
+			    padding-bottom: 10px;
+			    -webkit-filter: grayscale(1);
+	  			filter: grayscale(1);
+
+			}
+				strong {
+			    display: block;
+			    text-transform: uppercase;
+			    font-size: 18px;
+			    padding-bottom: 5px;
+			    @include respond-to(media-lg) {
+					font-size: 15px; padding-bottom: 0;
+				}
+			}
+				span {
+			    font-size: 16px;
+			    font-weight: 300;
+			    color: #666;
+			    line-height: 20px;
+			    @include respond-to(media-lg) {
+				font-size: 13px; line-height: normal;
+			}
+			}
+			&:hover i{
+				-webkit-filter: grayscale(0);
+	  			filter: grayscale(0);
+	  		}
+			
+	    }	
+	}
+}

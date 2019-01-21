@@ -1,0 +1,76 @@
+/*Media Query Mixing*/
+/*Overlay Mixin*/
+/*Color*/
+/*white-box Mixin*/
+/*blog heading Mixin*/
+.modal-dialog.user-list-popup {
+  max-width: 768px;
+  margin: 100px auto; }
+  @media (max-width: 991px) {
+    .modal-dialog.user-list-popup {
+      margin: 100px 20px; } }
+  @media (max-width: 639px) {
+    .modal-dialog.user-list-popup {
+      margin: 100px 15px; } }
+  .modal-dialog.user-list-popup .modal-header {
+    margin-bottom: 25px;
+    border-bottom: 0; }
+    .modal-dialog.user-list-popup .modal-header .modal-title img {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      top: -70px; }
+      @media (max-width: 991px) {
+        .modal-dialog.user-list-popup .modal-header .modal-title img {
+          max-width: 100px;
+          top: -50px; } }
+    .modal-dialog.user-list-popup .modal-header .close {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      width: 30px;
+      height: 30px;
+      border: 1px solid #ba2f2b;
+      border-radius: 100%;
+      background-color: #fff;
+      opacity: 1;
+      line-height: 0;
+      text-align: center;
+      padding: 0; }
+      .modal-dialog.user-list-popup .modal-header .close span {
+        color: #ba2f2b; }
+  .modal-dialog.user-list-popup .form-group label {
+    color: #534949; }
+  .modal-dialog.user-list-popup .form-control {
+    color: #a9a6a6 !important;
+    font-size: 15px; }
+    .modal-dialog.user-list-popup .form-control::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #a9a6a6;
+      opacity: 1;
+      /* Firefox */ }
+    .modal-dialog.user-list-popup .form-control:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: #a9a6a6; }
+    .modal-dialog.user-list-popup .form-control::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: #a9a6a6; }
+
+.modal-dialog.user-list-popup.confirmation-popup {
+  max-width: 300px; }
+
+.stars {
+  width: 15px; }
+
+.canclBtnOuter button {
+  width: 100px;
+  padding: 10px 0 !important;
+  height: auto;
+  font-size: 15px !important; }
+
+.canclBtnOuter .redBg {
+  background: #ff0000 !important; }
+
+.canclBtnOuter .canclBtn {
+  background: #118eff !important; }

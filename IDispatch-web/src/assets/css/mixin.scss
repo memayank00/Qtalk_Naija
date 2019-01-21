@@ -1,0 +1,84 @@
+/*Media Query Mixing*/
+  @mixin respond-to($breakpoint) {
+    @if $breakpoint == "media-xs" {
+      @media (max-width: 479px) {
+        @content;
+      }
+    }
+
+    @else if $breakpoint == "media-xm" {
+      @media (max-width: 575px) {
+        @content;
+      }
+    }
+  
+    @else if $breakpoint == "media-sm" {
+      @media (max-width: 639px) {
+        @content;
+      }
+    }
+   
+    @else if $breakpoint == "media-md" {
+      @media (max-width: 767px) {
+        @content;
+      }
+    }
+  
+    @else if $breakpoint == "media-lg" {
+      @media (max-width: 991px) {
+        @content;
+      }
+    }
+  
+    @else if $breakpoint == "media-xl" {
+      @media (max-width: 1199px) {
+        @content;
+      }
+    }
+    @else if $breakpoint == "media-xxl" {
+        @media (max-width: 1399px) {
+            @content;
+        }
+    }
+    @else if $breakpoint == "media-xxxl" {
+        @media (max-width: 1599px) { 
+            @content;
+        }
+    }
+  }
+$primary-color: #545252;
+$button-color: #ff9d3d;
+$white-color:#fff;
+$blue-color:#1490ff;
+$heading-color:#118ffe;
+
+/*Overlay Mixin*/
+@mixin overlay() {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/*Color*/
+
+
+/*white-box Mixin*/
+@mixin white-box() {
+  background-color: #ffffff;
+  border: 1px solid #ced4da;
+  border-radius: 3px;
+}
+
+/*blog heading Mixin*/
+@mixin blog-heading() {
+  color: #000000;
+  text-transform: uppercase;
+  border-bottom: 1px solid #deddde;
+  font-family: 'open_sanssemibold';
+  padding-bottom: 10px;
+}
+
+
+  

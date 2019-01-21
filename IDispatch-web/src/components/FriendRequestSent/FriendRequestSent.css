@@ -1,0 +1,189 @@
+/*Media Query Mixing*/
+/*Overlay Mixin*/
+/*Color*/
+/*white-box Mixin*/
+/*blog heading Mixin*/
+.findFrdBg {
+  background: #fff;
+  box-shadow: #e5e5e5 0 10px 10px 0;
+  position: relative; }
+  @media (max-width: 991px) {
+    .findFrdBg {
+      padding-bottom: 10px; } }
+  .findFrdBg .findfrdHd {
+    font-size: 20px;
+    color: #000000;
+    line-height: 50px;
+    font-weight: 500; }
+    @media (max-width: 767px) {
+      .findFrdBg .findfrdHd {
+        font-size: 16px;
+        line-height: 30px; } }
+  .findFrdBg .trackingBy {
+    color: #999;
+    padding-top: 12px;
+    text-align: right; }
+    .findFrdBg .trackingBy a {
+      display: inline-block;
+      color: #999;
+      font-size: 16px;
+      font-weight: 300;
+      margin: 0 3px; }
+      @media (max-width: 479px) {
+        .findFrdBg .trackingBy a {
+          font-size: 13px; } }
+      .findFrdBg .trackingBy a span {
+        color: #118eff; }
+      .findFrdBg .trackingBy a:hover {
+        color: #000;
+        text-decoration: underline; }
+    .findFrdBg .trackingBy .trackingActiveSent {
+      color: #0a8fff;
+      font-weight: 500; }
+
+.dashBg {
+  background: url(/assets/images/dashBg.png) top center no-repeat;
+  background-size: cover;
+  padding: 50px 0; }
+  .dashBg .addFrdInn.frdReqList {
+    background: #fff;
+    padding: 20px 20px 20px 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: #ccc 0 2px 5px 0;
+    position: relative;
+    min-height: 100px; }
+    .dashBg .addFrdInn.frdReqList .closeBx {
+      position: absolute;
+      bottom: 0px;
+      background: #eee;
+      left: 0;
+      right: 0;
+      width: 100%;
+      line-height: 24px;
+      text-align: center;
+      border-radius: 0 0 5px 5px; }
+      .dashBg .addFrdInn.frdReqList .closeBx a {
+        color: #8f8f8f;
+        font-size: 14px; }
+        @media (max-width: 767px) {
+          .dashBg .addFrdInn.frdReqList .closeBx a {
+            font-size: 12px; } }
+    @media (max-width: 991px) {
+      .dashBg .addFrdInn.frdReqList {
+        padding: 10px;
+        min-height: 115px; } }
+    @media (max-width: 767px) {
+      .dashBg .addFrdInn.frdReqList {
+        min-height: 115px; } }
+    .dashBg .addFrdInn.frdReqList .frdListImg img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%; }
+      @media (max-width: 991px) {
+        .dashBg .addFrdInn.frdReqList .frdListImg img {
+          width: 55px;
+          height: 55px; } }
+      @media (max-width: 479px) {
+        .dashBg .addFrdInn.frdReqList .frdListImg img {
+          width: 45px;
+          height: 45px; } }
+    .dashBg .addFrdInn.frdReqList .frdListName {
+      padding: 23px 0 0 0; }
+      @media (max-width: 991px) {
+        .dashBg .addFrdInn.frdReqList .frdListName {
+          padding: 10px 0 0 0; } }
+      @media (max-width: 479px) {
+        .dashBg .addFrdInn.frdReqList .frdListName {
+          padding: 0px; } }
+      .dashBg .addFrdInn.frdReqList .frdListName strong {
+        font-size: 22px;
+        font-weight: 500;
+        display: block;
+        line-height: 25px; }
+        @media (max-width: 1199px) {
+          .dashBg .addFrdInn.frdReqList .frdListName strong {
+            font-size: 18px; } }
+        @media (max-width: 991px) {
+          .dashBg .addFrdInn.frdReqList .frdListName strong {
+            font-size: 14px;
+            line-height: 20px; } }
+        @media (max-width: 479px) {
+          .dashBg .addFrdInn.frdReqList .frdListName strong {
+            font-size: 12px;
+            line-height: 20px; } }
+      .dashBg .addFrdInn.frdReqList .frdListName small {
+        display: block;
+        font-size: 18px;
+        color: #999;
+        padding-bottom: 8px; }
+        @media (max-width: 1199px) {
+          .dashBg .addFrdInn.frdReqList .frdListName small {
+            font-size: 15px; } }
+        @media (max-width: 991px) {
+          .dashBg .addFrdInn.frdReqList .frdListName small {
+            font-size: 12px; } }
+        @media (max-width: 479px) {
+          .dashBg .addFrdInn.frdReqList .frdListName small {
+            font-size: 10px; } }
+      .dashBg .addFrdInn.frdReqList .frdListName a {
+        color: #0e8bff;
+        font-size: 15px;
+        line-height: 21px; }
+        @media (max-width: 991px) {
+          .dashBg .addFrdInn.frdReqList .frdListName a {
+            font-size: 12px;
+            line-height: 18px; } }
+    .dashBg .addFrdInn.frdReqList .frdListBtn {
+      text-align: left;
+      padding-top: 10px; }
+      @media (max-width: 767px) {
+        .dashBg .addFrdInn.frdReqList .frdListBtn {
+          padding-top: 5px; } }
+      @media (max-width: 479px) {
+        .dashBg .addFrdInn.frdReqList .frdListBtn {
+          padding-left: 0px; } }
+      .dashBg .addFrdInn.frdReqList .frdListBtn span {
+        text-align: right;
+        display: block;
+        font-size: 15px;
+        padding-bottom: 10px;
+        color: #f14848;
+        font-weight: 300; }
+        @media (max-width: 479px) {
+          .dashBg .addFrdInn.frdReqList .frdListBtn span {
+            font-size: 12px;
+            padding-bottom: 5px; } }
+      .dashBg .addFrdInn.frdReqList .frdListBtn a {
+        font-size: 14px;
+        display: block;
+        line-height: 16px;
+        border: #dcdcdc solid 1px;
+        padding: 7px 12px;
+        border-radius: 3px;
+        width: 105px;
+        margin-bottom: 7px;
+        float: right; }
+        @media (max-width: 991px) {
+          .dashBg .addFrdInn.frdReqList .frdListBtn a {
+            font-size: 12px;
+            padding: 5px 8px;
+            width: 90px; } }
+        @media (max-width: 479px) {
+          .dashBg .addFrdInn.frdReqList .frdListBtn a {
+            font-size: 11px;
+            padding: 4px 5px;
+            width: 80px; } }
+        .dashBg .addFrdInn.frdReqList .frdListBtn a img {
+          vertical-align: middle; }
+      .dashBg .addFrdInn.frdReqList .frdListBtn .remove_Btn {
+        color: #f14848; }
+      .dashBg .addFrdInn.frdReqList .frdListBtn .acceptBtn {
+        color: #3fd589; }
+
+.requested {
+  font-weight: 400 !important;
+  margin-bottom: 5px; }
+  .requested a {
+    cursor: default;
+    color: green !important; }

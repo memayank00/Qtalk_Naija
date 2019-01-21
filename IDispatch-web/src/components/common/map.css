@@ -1,0 +1,29 @@
+.map-pro-box {
+ 
+}
+.map-prop-detail {
+  float: left;
+}
+.map-pro-box img {
+  width: 230px;
+  display: block;
+}
+.map-pro-box h3 {
+  font-size: 17px;
+  margin-top: 7px;
+  margin-bottom: 3px;
+}
+.map-pro-box p {
+  margin-bottom: 0;
+  word-break: break-all;
+}
+.map-prop-price {
+  font-size: 18px;
+  font-weight: 500;
+  color: #118eff;
+  float: right;
+  margin-top: 15px;
+}
+.gmnoprint img{
+  border-radius: 50px;
+}

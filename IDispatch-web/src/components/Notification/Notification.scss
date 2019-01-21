@@ -1,0 +1,174 @@
+@import 'assets/css/mixin.scss';
+.blueClr{
+	color: #118eff;
+}
+
+.findFrdBg {
+    background: #fff;
+    box-shadow: #e5e5e5 0 10px 10px 0;
+    position: relative;
+    @include respond-to(media-lg) {
+			padding-bottom:0;
+		}
+    .findfrdHd {
+		font-size: 18px;
+		color: #000000;
+		line-height: 50px;
+		font-weight: 500;
+		@include respond-to(media-md) {
+			font-size: 16px;
+			line-height: 30px;
+		}
+	}
+	.trackingBy{
+		color: #999; 
+		padding-top: 12px;
+		text-align: right;
+		a{
+			display: inline-block; 
+			color: #999; 
+			font-size: 16px; 
+			font-weight: 300; 
+			margin: 0 3px;
+			@include respond-to(media-xs) {
+				font-size: 13px;
+			}
+			span{ 
+				color:#118eff;
+			}
+			&:hover{
+				color:#000;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+.notifiList{
+	li{
+		background: #fff;
+		padding: 10px 73px 10px 80px;
+		border-radius: 5px;
+		margin-bottom: 15px;
+		position: relative;
+		box-shadow: #ccc 0 3px 3px 0;
+		float: left;
+		width: 48%;
+		min-height: 105px;
+		@include respond-to(media-lg) {
+			width: 100%;
+			float:none;
+			min-height:50px;
+		}
+		@include respond-to(media-md) {
+			padding-right:20px; 
+		}
+		@include respond-to(media-xs) {
+			padding:10px 10px 10px 75px; 
+		}
+		.notifiImg {
+			width: 52px;
+			position: absolute;
+			left: 10px;
+			top: 12px;
+		    @include respond-to(media-xs) {
+		    	left: 10px;
+		    	top: 10px;
+		    }
+		    img{
+		    	width: 100%;
+		    	height: 100%;
+		    	border-radius: 50%;
+		    }
+		}
+		.notifiDesc {
+    		padding-top: 0;
+			font-size: 15px;
+			font-weight: 300;
+    		@include respond-to(media-lg) {
+    			font-size: 16px;
+    			padding-top: 0;
+    		}
+    		@include respond-to(media-xs) {
+    			font-size: 14px;
+    		}
+    		strong{
+				font-size: 17px;
+				padding-right: 15px;
+				display: block;
+    			@include respond-to(media-lg) {
+    				font-size: 16px;
+    				display: block;
+    			}
+    			@include respond-to(media-xs) {
+    				font-size: 15px;
+    			}
+    		}
+		}
+		.notifiBtn {    
+			width: 100%;
+			margin-top: 7px;
+
+			button {
+			    border: #d3d3d3 solid 1px;
+			    height: 33px;
+			    width: 110px;
+			    background: #fff;
+			    border-radius: 3px;
+			    cursor: pointer;
+			    @include respond-to(media-xs) {
+			    	width: 90px;
+			    	font-size: 13px;
+			    }
+			}
+			.declineBtn {
+   				color: #f14848;
+    			margin-right: 10px;
+			}
+			.acceptBtn {
+   				color: #3fd589;
+    			margin-right: 10px;
+			}
+			
+			span{
+				position: absolute;
+				right: 10px;
+				top: 6px;
+				font-size: 12px;
+				color: #666;
+			}
+		}
+
+		.acceptedRqst{
+			margin-top:10px;
+			color:green;
+			text-align: left;
+			padding-right: 20px;
+		}
+		.rejectedRqst{
+			color: red;
+			margin-top: 15px;
+			text-align: right;
+			padding-right: 20px;
+		}
+	}
+	li:nth-child(2n) {
+		float: right;
+		@include respond-to(media-lg) {
+			float:none;
+		}
+	}
+}
+.notifiList li{ 
+	.notifiBtn {
+		.rejectedRqst {
+		    color: red;
+		    margin-top: 10px;
+		    background: none;
+		    text-align: right;
+		    padding-right: 20px;
+		    font-size: 15px;
+		    padding-bottom: 5px;
+    	}
+    }
+
+}

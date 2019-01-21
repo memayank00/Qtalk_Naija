@@ -1,0 +1,7 @@
+"Username","Email","URL","Count","Browser","OS","Timezone","IP"
+,,"http://localhost:3000/manager/forgot-password",1,"Chromium","Linux","Asia/Calcutta","100.100.7.165"
+"superAdmin  lastname","superadmin@yopmail.com","http://localhost:3000/manager/user-management/edit/5b559b646353cc5362ffe268",2,"Chromium","Linux","Asia/Calcutta","100.100.7.165"
+"superAdmin  lastname","superadmin@yopmail.com","http://localhost:3000/manager/user-management/edit/5b5067321540791ebcc10236",2,"Chromium","Linux","Asia/Calcutta","100.100.7.165"
+"superAdmin  lastname","superadmin@yopmail.com","http://localhost:3000/manager/logs/access",5,"Chromium","Linux","Asia/Calcutta","100.100.7.165"
+"superAdmin  lastname","superadmin@yopmail.com","http://localhost:3000/manager/profile",2,"Chromium","Linux","Asia/Calcutta","100.100.7.165"
+"superAdmin  lastname","superadmin@yopmail.com","http://localhost:3000/manager/change-password",1,"Chromium","Linux","Asia/Calcutta","100.100.7.165"

@@ -1,0 +1,86 @@
+/*Media Query Mixing*/
+/*Overlay Mixin*/
+/*Color*/
+/*white-box Mixin*/
+/*blog heading Mixin*/
+.modal-dialog.Visiblity_ModalOuter {
+  top: 80px; }
+  .modal-dialog.Visiblity_ModalOuter .modal-header {
+    text-align: center;
+    display: block;
+    position: relative;
+    padding-top: 30px !important;
+    border-bottom: 0px !important; }
+    @media (max-width: 479px) {
+      .modal-dialog.Visiblity_ModalOuter .modal-header {
+        padding-top: 20px !important;
+        padding-bottom: 0px !important; } }
+    .modal-dialog.Visiblity_ModalOuter .modal-header .modal-title {
+      margin: 0 auto;
+      width: 100%; }
+      .modal-dialog.Visiblity_ModalOuter .modal-header .modal-title .modalLogo {
+        margin: 0 auto;
+        width: 100%;
+        text-align: left; }
+        @media (max-width: 479px) {
+          .modal-dialog.Visiblity_ModalOuter .modal-header .modal-title .modalLogo img {
+            height: 15px; } }
+        .modal-dialog.Visiblity_ModalOuter .modal-header .modal-title .modalLogo span {
+          display: block;
+          text-transform: uppercase;
+          padding-top: 6px;
+          font-size: 22px;
+          font-weight: 600;
+          letter-spacing: 0; }
+          @media (max-width: 479px) {
+            .modal-dialog.Visiblity_ModalOuter .modal-header .modal-title .modalLogo span {
+              font-size: 20px !important;
+              padding-top: 0px !important;
+              letter-spacing: 0px !important; } }
+    .modal-dialog.Visiblity_ModalOuter .modal-header .close {
+      position: absolute;
+      right: 15px;
+      top: 10px; }
+      @media (max-width: 479px) {
+        .modal-dialog.Visiblity_ModalOuter .modal-header .close {
+          right: 25px;
+          top: 25px;
+          line-height: 20px;
+          padding: 0px; } }
+      .modal-dialog.Visiblity_ModalOuter .modal-header .close span {
+        font-size: 26px;
+        font-weight: 400; }
+  .modal-dialog.Visiblity_ModalOuter .VisibilityList {
+    position: relative;
+    padding: 0 70px 25px 60px; }
+    @media (max-width: 479px) {
+      .modal-dialog.Visiblity_ModalOuter .VisibilityList {
+        padding: 0 35px 25px 50px; } }
+    .modal-dialog.Visiblity_ModalOuter .VisibilityList i {
+      position: absolute;
+      left: 5px;
+      top: 5px; }
+      @media (max-width: 479px) {
+        .modal-dialog.Visiblity_ModalOuter .VisibilityList i {
+          left: 0px; } }
+    .modal-dialog.Visiblity_ModalOuter .VisibilityList strong {
+      font-size: 20px;
+      display: block;
+      font-weight: 400;
+      color: #1d1d1d; }
+      @media (max-width: 479px) {
+        .modal-dialog.Visiblity_ModalOuter .VisibilityList strong {
+          font-size: 18px; } }
+    .modal-dialog.Visiblity_ModalOuter .VisibilityList p {
+      font-size: 18px;
+      color: #999; }
+      @media (max-width: 479px) {
+        .modal-dialog.Visiblity_ModalOuter .VisibilityList p {
+          font-size: 16px; } }
+    .modal-dialog.Visiblity_ModalOuter .VisibilityList span {
+      position: absolute;
+      right: 10px;
+      top: 5px; }
+      @media (max-width: 479px) {
+        .modal-dialog.Visiblity_ModalOuter .VisibilityList span {
+          right: 0; } }

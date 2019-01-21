@@ -1,0 +1,97 @@
+@import 'assets/css/mixin.scss';
+.modal-dialog.SignupModalOuter {
+    max-width: 865px;
+    .modal-header{
+		text-align: center;
+		display: block;
+		position: relative;
+		padding-top: 30px !important;
+		border-bottom: 0px !important;
+		@include respond-to(media-xs) {
+	    	padding-top: 20px !important;
+	    	padding-bottom: 0px !important;
+	    }
+		.modal-title{
+			margin: 0 auto;
+			width: 100%;
+			.modalLogo {
+			    text-align: center;
+	    		margin: 0 auto;
+	    		width: 100%;
+	    		img{
+		    		@include respond-to(media-xs) {
+		    			height: 15px;
+		    		}
+	    		}
+	    		span {
+				    display: block;
+				    text-transform: uppercase;
+				    padding-top: 6px;
+				    font-size: 26px;
+				    font-weight: 600;
+				    letter-spacing: 2px;
+				    @include respond-to(media-xs) {
+		    			font-size: 20px !important;
+		    			padding-top: 0px !important;
+		    			letter-spacing: 0px !important;
+		    		}
+				}
+			}
+		}
+		.close {
+		    position: absolute;
+	    	right: 15px;
+	    	top: 10px;
+	    	@include respond-to(media-xs) {
+		    	right: 10px;
+		    	top: 0px;
+		    	line-height: 20px;
+		    	padding: 0px;
+		    }
+	    	span{
+	    		font-size: 26px;
+				font-weight: 400;
+	    	}
+		}
+	}
+
+	.signupFrmMain{
+		.form-group{
+			margin-bottom: 20px;
+			input{
+				height: 54px;
+				border: #dbdee3 solid 1px !important;
+				font-size: 16px;
+				font-weight: 30;
+				color: #333 !important;	
+				@include respond-to(media-xs) {
+					height: 45px;
+					border-radius: 3px;
+				}				
+			}
+		}
+	}
+	.form-check-label {
+	    margin-bottom: 0;
+	    font-size: 16px;
+	    font-weight: 400;
+	    @include respond-to(media-xs) {
+			font-size: 12px;
+		}
+		.form-check-input{
+			@include respond-to(media-xs) {
+				margin-top:2px;
+			}
+		}
+	}
+	button {
+		max-width: 500px;
+		height: 54px;
+		margin: 0 auto 10px auto;
+		display: block;
+		@include respond-to(media-xs) {
+			height: 45px;
+		}
+	}
+}
+

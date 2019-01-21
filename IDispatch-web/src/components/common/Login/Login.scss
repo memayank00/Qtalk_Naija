@@ -1,0 +1,141 @@
+@import 'assets/css/mixin.scss';
+.modal-header{
+	text-align: center;
+	display: block;
+	position: relative;
+	padding-top: 30px !important;
+	border-bottom: 0px !important;
+		@include respond-to(media-xs) {
+	    	padding-top: 20px !important;
+	    	padding-bottom: 0px !important;
+		
+	    }
+	.modal-title{
+		margin: 0 auto;
+		width: 100%;
+		.modalLogo {
+		    text-align: center;
+    		margin: 0 auto;
+    		width: 100%;
+    		img{
+	    		@include respond-to(media-xs) {
+	    			height: 15px;
+	    		}
+    		}
+    		span {
+			    display: block;
+			    text-transform: uppercase;
+			    padding-top: 6px;
+			    font-size: 26px;
+			    font-weight: 600;
+			    letter-spacing: 2px;
+			    @include respond-to(media-xs) {
+	    			font-size: 20px;
+	    			padding-top: 0px;
+	    			letter-spacing: 0px;
+	    		}
+			}
+		}
+	}
+	.close {
+	    position: absolute;
+    	right: 15px;
+    	top: 10px;
+    	@include respond-to(media-xs) {
+	    	right: 10px;
+	    	top: 0px;
+	    	line-height: 20px;
+	    	padding: 0px;
+	    }
+    	
+    	span{
+    		font-size: 26px;
+			font-weight: 400;
+    	}
+	}
+}
+.modal-body{
+	.signInmain{
+		.form-group{
+			margin-bottom: 20px;
+			input{
+				height: 54px;
+				border: #dbdee3 solid 1px !important;
+				font-size: 16px;
+				font-weight: 30;
+				color: #333 !important;	
+				@include respond-to(media-xs) {
+					height: 45px;
+					border-radius: 3px;
+				}			
+			}
+		}
+	}
+	.rembBx {
+		padding-bottom: 20px;
+		label{
+			padding-left: 22px;
+			input[type="checkbox"] {
+			    display: inline-block;
+			}
+		}
+	    .form-check {
+		    display: inline-block;
+		    color: #999;
+		    font-size: 14px;
+		}
+		span {
+			float: right;
+			font-size: 13px;
+			a{
+				color: #000;
+			}
+			a:hover{
+				color: #0056b3;
+			}
+		}
+	}
+
+	button {
+		width: 100%;
+		height: 54px;
+		border-radius: 27px !important;
+		font-size: 18px !important;
+		background: #ef8013;
+		color: #fff;
+		border: 0;
+		@include respond-to(media-xs) {
+			height: 45px;
+		}
+		&:hover{
+			background: #0d81de;
+		}
+	}
+
+	.orBx {
+	    margin-top: 30px;
+	    text-align: center;
+	    height: 1px;
+	    background: #cdcdcd;
+	    span{
+		    background: #fff;
+		    display: inline-block;
+		    padding: 0 10px;
+		    line-height: 20px;
+		    top: -11px;
+		    position: relative;
+		    color: #999;
+		}
+	}
+	.modalBotLink {
+	    padding-top: 25px;
+	    text-align: center;
+	    a{
+		    display: inline-block;
+		    font-weight: 400;
+		    text-decoration: underline;
+		    font-size: 14px;
+		    color: #0056b3 !important;
+		}
+	}
+}

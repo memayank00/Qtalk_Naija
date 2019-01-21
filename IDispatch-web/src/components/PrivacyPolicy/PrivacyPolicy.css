@@ -1,0 +1,107 @@
+/*Media Query Mixing*/
+/*Overlay Mixin*/
+/*Color*/
+/*white-box Mixin*/
+/*blog heading Mixin*/
+.aboutBanner {
+  background: url("/assets/images/about-banner.png") center center no-repeat;
+  background-size: cover;
+  height: 106px; }
+  .aboutBanner .aboutBanInn {
+    position: relative; }
+    .aboutBanner .aboutBanInn .aboutBanBx {
+      text-align: center;
+      font-size: 36px;
+      text-transform: uppercase;
+      color: #fff;
+      font-weight: 600;
+      line-height: 106px; }
+      @media (max-width: 767px) {
+        .aboutBanner .aboutBanInn .aboutBanBx {
+          line-height: 30px;
+          font-size: 24px;
+          padding-top: 25px; } }
+    .aboutBanner .aboutBanInn .breatcrum_Outer {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      line-height: 30px;
+      color: #fff;
+      margin-top: -15px; }
+      @media (max-width: 767px) {
+        .aboutBanner .aboutBanInn .breatcrum_Outer {
+          position: relative;
+          left: 0;
+          top: 0;
+          line-height: 30px;
+          color: #fff;
+          margin-top: 0px; } }
+      .aboutBanner .aboutBanInn .breatcrum_Outer .breadcrumb {
+        background: none !important;
+        padding: 0;
+        margin: 0;
+        color: #fff; }
+        @media (max-width: 767px) {
+          .aboutBanner .aboutBanInn .breatcrum_Outer .breadcrumb {
+            text-align: center;
+            display: block; } }
+        .aboutBanner .aboutBanInn .breatcrum_Outer .breadcrumb .breadcrumb-item {
+          color: #fff;
+          font-size: 16px; }
+          .aboutBanner .aboutBanInn .breatcrum_Outer .breadcrumb .breadcrumb-item:hover {
+            color: #ff9d3d; }
+        .aboutBanner .aboutBanInn .breatcrum_Outer .breadcrumb .breadcrumb-item:first-child {
+          color: #ff9d3d; }
+        .aboutBanner .aboutBanInn .breatcrum_Outer .breadcrumb .breadcrumb-item:before {
+          color: #fff; }
+
+.aboutsection {
+  padding: 50px 0; }
+  @media (max-width: 479px) {
+    .aboutsection {
+      padding: 20px 0; } }
+  .aboutsection .list-group-item {
+    position: relative;
+    display: block;
+    padding: 0;
+    margin-bottom: 0;
+    background-color: none;
+    border: 0;
+    padding-bottom: 40px; }
+    @media (max-width: 479px) {
+      .aboutsection .list-group-item {
+        padding-bottom: 20px; } }
+    .aboutsection .list-group-item .list-group-item-heading {
+      font-size: 24px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 0;
+      color: #2196f3; }
+      @media (max-width: 767px) {
+        .aboutsection .list-group-item .list-group-item-heading {
+          font-size: 20px; } }
+      @media (max-width: 479px) {
+        .aboutsection .list-group-item .list-group-item-heading {
+          font-size: 18px; } }
+    .aboutsection .list-group-item .list-group-item-text {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      font-size: 17px;
+      font-weight: 300;
+      color: #525252; }
+      @media (max-width: 767px) {
+        .aboutsection .list-group-item .list-group-item-text {
+          font-size: 15px; } }
+      .aboutsection .list-group-item .list-group-item-text a {
+        color: #fb840d; }
+        .aboutsection .list-group-item .list-group-item-text a:hover {
+          color: #2196f3; }
+
+ul.privacyList {
+  list-style: disc;
+  padding-left: 20px; }
+  ul.privacyList li {
+    list-style: disc;
+    padding-bottom: 5px;
+    color: #666;
+    font-weight: 400; }

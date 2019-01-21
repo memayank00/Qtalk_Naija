@@ -1,0 +1,133 @@
+@import 'assets/css/mixin.scss';
+.aboutBanner{
+	background: url("/assets/images/about-banner.png") center center no-repeat; 
+	background-size: cover; 
+	height: 106px;
+		.aboutBanInn {
+			position: relative;
+		    	.aboutBanBx {
+				    text-align: center;
+				    font-size: 36px;
+				    text-transform: uppercase;
+				    color: #fff;
+				    font-weight: 600;
+				    line-height: 106px;
+				     @include respond-to(media-md) {
+						line-height: 30px;
+						font-size: 24px;
+						padding-top: 25px;
+					} 
+				}
+			.breatcrum_Outer {
+			    position: absolute;
+			    left: 0;
+			    top: 50%;
+			    line-height: 30px;
+			    color: #fff;
+			    margin-top: -15px;
+			    @include respond-to(media-md) {
+					position:relative;
+				    left: 0;
+				    top: 0;
+				    line-height: 30px;
+				    color: #fff;
+				    margin-top: 0px;
+				} 
+			    .breadcrumb {
+					background: none !important;
+					padding: 0;
+					margin: 0;
+					color: #fff;
+					@include respond-to(media-md) {
+						text-align: center;
+						display: block;
+					}
+					.breadcrumb-item{
+						color: #fff;
+						font-size: 16px;
+						&:hover{ color:#ff9d3d; }
+					}
+					.breadcrumb-item:first-child{ color:#ff9d3d; }
+					.breadcrumb-item:before{ color: #fff;}
+				}
+			}
+	}
+}
+.contHd {
+    color: #2196f3;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding-bottom: 30px;
+    @include respond-to(media-xs) {
+		padding-bottom: 10px;
+		font-size: 18px;
+	}
+}
+.contfrmOuter{
+	@include respond-to(media-md) {
+		padding-bottom: 30px;
+	}
+	.form-group {
+	    margin-bottom: 25px;
+	    @include respond-to(media-xs) {
+		   	margin-bottom: 15px;
+		}
+		input{
+		    height: 49px;
+		    border: #e8e8e8 solid 1px;
+		    border-radius: 0;
+		    padding: 0 10px;
+		    font-size: 15px;
+		    font-weight: 400;
+		    @include respond-to(media-xs) {
+		    	height: 40px;
+		    	font-size: 13px;
+		    }
+		    &:focus{
+		    	border:#2196f3 solid 1px;
+		    	-webkit-box-shadow: 0 0 0 1px #2196f3;
+				box-shadow: 0 0 0 1px #2196f3;
+		    }
+		}
+		textarea{
+		    height: 150px;
+		    border: #e8e8e8 solid 1px;
+		    border-radius: 0;
+		    padding:10px;
+		    font-size: 15px;
+		    font-weight: 400;
+		    resize: none;
+		    @include respond-to(media-xs) {
+		    	height:100px;
+		    	font-size: 13px;
+		    }
+		    &:focus{
+		    	border:#2196f3 solid 1px;
+		    	-webkit-box-shadow: 0 0 0 1px #2196f3;
+				box-shadow: 0 0 0 1px #2196f3;
+		    }
+		}
+	}
+	button{
+		background: #ff9d3d;
+		border:#ff9d3d solid 3px; 
+		color: #fff;
+		height: 49px;
+	   	font-size: 18px !important;
+	   	border-radius: 25px !important;
+	   	margin-top: 10px;
+	   	@include respond-to(media-xs) {
+	   		height: 40px;
+	   		font-size: 15px !important;
+	   		margin-top: 0px;
+	   	}
+	   	&:hover, &:focus{
+	   		background:#2196f3;
+	   		border:#2196f3 solid 3px;
+	   	}
+		
+	}
+
+}
+

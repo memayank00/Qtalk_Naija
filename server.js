@@ -26,11 +26,11 @@ class Server {
     /*Create SSL option*/
     var sslOptions = {};
       if( process.env.NODE_ENV === 'production' ){
-          sslOptions={
+          /*sslOptions={
               cert : fs.readFileSync('/home/trackingapp/tracking-app-ssl/trackingapp.com.crt'),
               key: fs.readFileSync('/home/trackingapp/tracking-app-ssl/trackingapp.com.key'),
               ca: fs.readFileSync('/home/trackingapp/tracking-app-ssl/trackingapp.com_bundle.crt')
-          };
+          };*/
       }
 
     /*init a sever*/

@@ -495,7 +495,8 @@ class FriendController extends App {
 	  	    		let match =(obj.type==='sent')? {from_userId:ObjectId(user._id)}:{to_userId:ObjectId(user._id)},
 	  	    			project = (obj.type==='sent')? {to_userId:1}:{from_userId:1},
 	  	    			addToSet = (obj.type==='sent')? `$to_userId`:`$from_userId`;
-	  	    			project['group_array']=null;
+	  	    			//project['group_array']=null;
+	  	    			project['group_array']=1;
 	  	    			match['status']='Pending';
 	  	    			match['type']='Friend';
 	  	    		query = [

@@ -92,18 +92,19 @@ class AppRouter {
         this.router.post('/user-signup', this.call['frontend']['UserController'].userSignup);
         this.router.post('/verify-otp', this.call['frontend']['UserController'].verifyOTP);
         this.router.post('/resend-otp', this.call['frontend']['UserController'].resendOTP);
-        this.router.post('/add-user-notes', this.call['frontend']['UserController'].addUserNotes);
-        this.router.get('/other-user-details', this.call['frontend']['UserController'].otherUserDetails);
-        this.router.get('/user-details', this.call['frontend']['UserController'].userDetails);
-        this.router.put('/update-user-details', this.call['frontend']['UserController'].updateUserDetails);
-        this.router.post('/update-profile-picture', this.call['frontend']['UserController'].updateProfilePicture);
-        this.router.post('/change-password', this.call['frontend']['UserController'].changePassword);
-        this.router.post('/update-user-location', this.call['frontend']['UserController'].updateUserLocation);
-        this.router.post('/toogle-user-availability', this.call['frontend']['UserController'].toogleUserAvailability);
-        this.router.get('/get-user-device-token', this.call['frontend']['UserController'].getUserDeviceToken);
+        //this.router.post('/add-user-notes', this.call['frontend']['UserController'].addUserNotes);
+        //this.router.get('/other-user-details', this.call['frontend']['UserController'].otherUserDetails);
+        //this.router.get('/user-details', this.call['frontend']['UserController'].userDetails);
+        //this.router.put('/update-user-details', this.call['frontend']['UserController'].updateUserDetails);
+        //this.router.post('/update-profile-picture', this.call['frontend']['UserController'].updateProfilePicture);
+        //this.router.post('/change-password', this.call['frontend']['UserController'].changePassword);
+        //this.router.post('/update-user-location', this.call['frontend']['UserController'].updateUserLocation);
+        //this.router.post('/toogle-user-availability', this.call['frontend']['UserController'].toogleUserAvailability);
+        //this.router.get('/get-user-device-token', this.call['frontend']['UserController'].getUserDeviceToken);
         //this.router.get('/delete-user-profile', this.call['frontend']['UserController'].deleteUserProfile);
-        this.router.post('/contact-us', this.call['frontend']['UserController'].contactUs);
-        this.router.get('/get-keyword-cms', this.call['frontend']['UserController'].getCms);
+        //this.router.post('/contact-us', this.call['frontend']['UserController'].contactUs);
+        //this.router.get('/get-keyword-cms', this.call['frontend']['UserController'].getCms);
+        
         /*Friend routes*/
         //this.router.get('/get-all-user', this.call['frontend']['FriendController'].getAllUser);
         this.router.post('/send-friend-request', this.call['frontend']['FriendController'].sendFriendRequest);

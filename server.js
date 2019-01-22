@@ -126,15 +126,15 @@ class Server {
           res.sendFile(path.resolve('./manager/build/index.html'));
       });
   }
-  handleError() {
-    /*rendering file on routes*/
-      this.app.use((err,req,res,next)=>{
-        console.log(err)
-        if(err.name==='UnauthorizedError'){
-          res.json({message:err.message})
-        }
-      });  
-  }
+  // handleError() {
+  //   /*rendering file on routes*/
+  //     this.app.use((err,req,res,next)=>{
+  //       console.log(err)
+  //       if(err.name==='UnauthorizedError'){
+  //         res.json({message:err.message})
+  //       }
+  //     });  
+  // }
   listen() {
     this.server.listen(this.port, () => {
       /**to create roles */
@@ -164,7 +164,7 @@ class Server {
     this.setStaticPaths();
     this.setAPIRoutes();
     this.allowToServe();
-    this.handleError();
+    //this.handleError();
     this.listen();
   }
 }

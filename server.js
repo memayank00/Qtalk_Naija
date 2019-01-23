@@ -116,15 +116,18 @@ class Server {
   }
 
   allowToServe() {
+    this.app.get('/', (req, res) => {           
+         res.sendFile(path.resolve('./index.html'));
+    });
     /*rendering file on routes*/
-        this.app.get(/^((?!\/(api|admin_api|manager)).)*$/, (req, res) => {           
+        /*this.app.get(/^((?!\/(api|admin_api|manager)).)*$/, (req, res) => {           
              res.sendFile(path.resolve('./IDispatch-web/build/index.html'));
-        });
+        });*/
 
         /**serve admin appliction if got manager in route */
-        this.app.get("/manager/*", (req, res) => {     
+        /*this.app.get("/manager/*", (req, res) => {     
           res.sendFile(path.resolve('./manager/build/index.html'));
-      });
+        });*/
   }
   // handleError() {
   //   /*rendering file on routes*/
@@ -135,6 +138,14 @@ class Server {
   //       }
   //     });  
   // }
+  /*{ Error: ENOENT: no such file or directory, stat '/home/ubuntu/Qtalk_Naija/IDispatch-web/build/index.html'
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'stat',
+  path: '/home/ubuntu/Qtalk_Naija/IDispatch-web/build/index.html',
+  expose: false,
+  statusCode: 404,
+  status: 404 }*/
   listen() {
     this.server.listen(this.port, () => {
       /**to create roles */

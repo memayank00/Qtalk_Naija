@@ -106,7 +106,7 @@ class AppRouter {
         //this.router.get('/get-keyword-cms', this.call['frontend']['UserController'].getCms);
         
         /*Friend routes*/
-        //this.router.get('/get-all-user', this.call['frontend']['FriendController'].getAllUser);
+        this.router.get('/get-all-user', this.call['frontend']['FriendController'].getAllUser);
         this.router.post('/send-friend-request', this.call['frontend']['FriendController'].sendFriendRequest);
         this.router.get('/recieved-sent-friend-request', this.call['frontend']['FriendController'].recievedSentFriendRequest);
         this.router.post('/accept-decline-friend-request', this.call['frontend']['FriendController'].acceptDeclineFriendRequest);

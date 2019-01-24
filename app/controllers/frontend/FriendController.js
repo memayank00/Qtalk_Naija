@@ -28,7 +28,7 @@ class FriendController extends App {
 	constructor(){
 		super();
 		/**/
-		//this.getAllUser = this.getAllUser.bind(this);
+		this.getAllUser = this.getAllUser.bind(this);
 		this.sendFriendRequest = this.sendFriendRequest.bind(this);
 		this.recievedSentFriendRequest = this.recievedSentFriendRequest.bind(this);	
 		this.acceptDeclineFriendRequest = this.acceptDeclineFriendRequest.bind(this);	
@@ -39,170 +39,170 @@ class FriendController extends App {
 		this.push = new Push();
 	}
 
-	// getAllUser(req,res){
+	getAllUser(req,res){
 
-	// 	/* let user={ _id: '5b67e73c7ee8ba15ea36b30f',
-	// 	name: 'User1 u1_L',
-	// 	email: 'user1@yopmail.com',
-	// 	username: 'user1',
-	// 	mobile: '987654321',
-	// 	profilePicture: 'http://69f995bd.ngrok.io/profilePicture/5b67e73c7ee8ba15ea36b30f/image.jpg',
-	// 	iat: 1539157228,
-	// 	exp: 1540366828 };  */
-	// 	let 
-	// 	user    = req.user,
-	// 	obj     = req.query,
-	//     limit   = parseInt(process.env.LIMIT)|| 10000,
- //        offset  = parseInt((obj.page - 1) * limit),
-	//     match   = {$and:[{_id: {'$ne': ObjectId(user._id)}}]},
-	// 	  select	= {},
-	// 	  select2={},
-	// 	  _check_friend_status=function (array=[]){
-	// 		  return new Promise((resolve, reject) => {
-	// 			ASYNC.eachOfSeries(array,(val1,index,_callback)=>{
-	// 				let filterObj = {
-	// 					$and: [{
-	// 						to_userId:ObjectId(val1._id),
-	// 						from_userId: ObjectId(user._id), type: 'Friend'
-	// 					}]
-	// 				};
-	// 				Request.findOne(
-	// 					filterObj,
-	// 					{ type: 1, status: 1, to_userId: 1, from_userId: 1 }
-	// 				, (err, found) => {
-	// 					if (err){  _callback(err) }
-	// 					else{
-	// 						if(found){
-	// 							if(found.status){
-	// 								val1.friend=found.status;
-	// 							}
-	// 							_callback();
-	// 						}
-	// 						else{val1.friend="";_callback();};
+		/* let user={ _id: '5b67e73c7ee8ba15ea36b30f',
+		name: 'User1 u1_L',
+		email: 'user1@yopmail.com',
+		username: 'user1',
+		mobile: '987654321',
+		profilePicture: 'http://69f995bd.ngrok.io/profilePicture/5b67e73c7ee8ba15ea36b30f/image.jpg',
+		iat: 1539157228,
+		exp: 1540366828 };  */
+		let 
+		user    = req.user,
+		obj     = req.query,
+	    limit   = parseInt(process.env.LIMIT)|| 10000,
+        offset  = parseInt((obj.page - 1) * limit),
+	    match   = {$and:[{_id: {'$ne': ObjectId(user._id)}}]},
+		  select	= {},
+		  select2={},
+		  _check_friend_status=function (array=[]){
+			  return new Promise((resolve, reject) => {
+				ASYNC.eachOfSeries(array,(val1,index,_callback)=>{
+					let filterObj = {
+						$and: [{
+							to_userId:ObjectId(val1._id),
+							from_userId: ObjectId(user._id), type: 'Friend'
+						}]
+					};
+					Request.findOne(
+						filterObj,
+						{ type: 1, status: 1, to_userId: 1, from_userId: 1 }
+					, (err, found) => {
+						if (err){  _callback(err) }
+						else{
+							if(found){
+								if(found.status){
+									val1.friend=found.status;
+								}
+								_callback();
+							}
+							else{val1.friend="";_callback();};
 						
-	// 					}
-	// 				})
-	// 			  },(err)=>{
-	// 				  if(err) reject(err);
-	// 				  else resolve(array) ;
-	// 			  })
-	// 		  })
-	// 	  };
- //  	   if(obj.text){
- //  	   	match = {$and:[
- //  	   		{$or:[
- //  	   			{username:new RegExp(`${obj.text}`, 'i')},
- //  	   			{name:new RegExp(`${obj.text}`, 'i')},
- //  	   			{email:new RegExp(`${obj.text}`, 'i')},
- //  	   			{mobile:new RegExp(`${obj.text}`, 'i')}
- //  	   			/*{username:new RegExp(`^${obj.text}`, 'i')},
- //  	   			{name:new RegExp(`^${obj.text}`, 'i')},
- //  	   			{email:new RegExp(`^${obj.text}`, 'i')},*/
- //  	   		]},
- //  	   	    {_id: {'$ne': ObjectId(user._id)}}
- //  	   	]};
- //  	   }
+						}
+					})
+				  },(err)=>{
+					  if(err) reject(err);
+					  else resolve(array) ;
+				  })
+			  })
+		  };
+  	   if(obj.text){
+  	   	match = {$and:[
+  	   		{$or:[
+  	   			{username:new RegExp(`${obj.text}`, 'i')},
+  	   			{name:new RegExp(`${obj.text}`, 'i')},
+  	   			{email:new RegExp(`${obj.text}`, 'i')},
+  	   			{mobile:new RegExp(`${obj.text}`, 'i')}
+  	   			/*{username:new RegExp(`^${obj.text}`, 'i')},
+  	   			{name:new RegExp(`^${obj.text}`, 'i')},
+  	   			{email:new RegExp(`^${obj.text}`, 'i')},*/
+  	   		]},
+  	   	    {_id: {'$ne': ObjectId(user._id)}}
+  	   	]};
+  	   }
   	  
- //  	  let friendQuery = [
-	//     			{
-	//     				$match:{_id:ObjectId(user._id)}
-	// 	    		},
-	// 	    		{
-	// 	    			$project:{friends:1}
-	// 	    		},
-	// 	    		{ $unwind : "$friends" },
-	// 	    		{
-	// 	    			$project:{friendId:"$friends.user_id"}
-	// 	    		},
-	// 	    		{
-	// 		    			$group : {
-	// 					    _id: "$_id",
-	// 					    friendsArray: { $addToSet:'$friendId'}
-	// 				    }
-	// 				}
-	// 		   ],
-	// 		   _get_user_list=function(array=[]){
-	// 				let select3={};
-	// 			return new Promise((resolve,reject)=>{
-	// 				if(array.length>0){
-	// 						select3  = {username:1,name:1,email:1,fullno:1,mobile:1,ccode:1,profilePicture:1,location: {$ifNull: ['$location', '']},isfriend:{$cond: { if: { $in: [ "$_id", array[0].friendsArray  ] }, then: true, else: false }}};
-	// 					}else{
-	// 						 select3  = {username:1,name:1,email:1,fullno:1,mobile:1,ccode:1,profilePicture:1,location: {$ifNull: ['$location', ''] },isfriend:{$cond: { if: { $in: [ "$_id",  []  ] }, then: true, else: false }}};
-	// 					}
-	// 				User.aggregate([
-	// 					{ $match: match },
-	// 					{
-	// 						$project: select3
-	// 					},
-	// 					{
-	// 						$match:{isfriend:false}
-	// 					},
-	// 					{ $skip: offset },
-	// 					{ $limit: limit },
+  	  let friendQuery = [
+	    			{
+	    				$match:{_id:ObjectId(user._id)}
+		    		},
+		    		{
+		    			$project:{friends:1}
+		    		},
+		    		{ $unwind : "$friends" },
+		    		{
+		    			$project:{friendId:"$friends.user_id"}
+		    		},
+		    		{
+			    			$group : {
+						    _id: "$_id",
+						    friendsArray: { $addToSet:'$friendId'}
+					    }
+					}
+			   ],
+			   _get_user_list=function(array=[]){
+					let select3={};
+				return new Promise((resolve,reject)=>{
+					if(array.length>0){
+							select3  = {username:1,name:1,email:1,fullno:1,mobile:1,ccode:1,profilePicture:1,location: {$ifNull: ['$location', '']},isfriend:{$cond: { if: { $in: [ "$_id", array[0].friendsArray  ] }, then: true, else: false }}};
+						}else{
+							 select3  = {username:1,name:1,email:1,fullno:1,mobile:1,ccode:1,profilePicture:1,location: {$ifNull: ['$location', ''] },isfriend:{$cond: { if: { $in: [ "$_id",  []  ] }, then: true, else: false }}};
+						}
+					User.aggregate([
+						{ $match: match },
+						{
+							$project: select3
+						},
+						{
+							$match:{isfriend:false}
+						},
+						{ $skip: offset },
+						{ $limit: limit },
 
-	// 				],(err,result)=>{
-	// 					if(err) reject(err);
-	// 					else resolve(result);
-	// 				})
-	// 			})
-	// 		   };
- //  	  User.aggregate(friendQuery,(err, userList1)=>{
- //  	  	if(userList1.length>0){
-	// 		select  = {username:1,name:1,email:1,fullno:1,mobile:1,ccode:1,profilePicture:1,location: {$ifNull: ['$location', '']},friendIDD:{$cond: { if: { $in: [ "$_id",  userList1[0].friendsArray  ] }, then: true, else: false }}};
-	// 		select2={username:1,name:1,email:1,location:1,fullno:1,mobile:1,ccode:1,count:"count",friendID:{$cond: { if: { $in: [ "$_id",  userList1[0].friendsArray ] }, then: true, else: false }}};
- //  	  	}else{
-	// 			select  = {username:1,name:1,email:1,fullno:1,mobile:1,ccode:1,profilePicture:1,location: {$ifNull: ['$location', ''] },friendIDD:{$cond: { if: { $in: [ "$_id",  []  ] }, then: true, else: false }}};
-	// 			select2={username:1,name:1,email:1,location:1,fullno:1,mobile:1,ccode:1,count:"count",friendID:{$cond: { if: { $in: [ "$_id",  [] ] }, then: true, else: false }}};
- //  	  	}
- //  	  	let query = [
-	//   	  	{
-	//   	  		$facet:{
-	//   	  			count:[
-	//   	  			   {
-	//   	  			   	$match:match
-	// 					},
-	//   	  			   {
-	//   	  			   	  $project:select2
-	// 					},
-	// 				 	{$match:{friendID:false}}, 
-	//   	  			   {
-	// 		             $group: {
-	// 		               _id: '$count',
-	// 		               total: { $sum: 1 }
-	// 		             }
-	// 		           }
-	//   	  			],
-	//   	  			userList:[
-	//   	  			   {
-	//   	  			 	  $match:match
-	// 					},
-	//   	  			   {
-	//   	  			   	  $project:select
-	// 					},
-	//   	  			   { $skip: offset },
-	// 				   { $limit: limit },
-	//   	  			]
-	//   	  		}
-	//   	  	}
-	// 		]; 
+					],(err,result)=>{
+						if(err) reject(err);
+						else resolve(result);
+					})
+				})
+			   };
+  	  User.aggregate(friendQuery,(err, userList1)=>{
+  	  	if(userList1.length>0){
+			select  = {username:1,name:1,email:1,fullno:1,mobile:1,ccode:1,profilePicture:1,location: {$ifNull: ['$location', '']},friendIDD:{$cond: { if: { $in: [ "$_id",  userList1[0].friendsArray  ] }, then: true, else: false }}};
+			select2={username:1,name:1,email:1,location:1,fullno:1,mobile:1,ccode:1,count:"count",friendID:{$cond: { if: { $in: [ "$_id",  userList1[0].friendsArray ] }, then: true, else: false }}};
+  	  	}else{
+				select  = {username:1,name:1,email:1,fullno:1,mobile:1,ccode:1,profilePicture:1,location: {$ifNull: ['$location', ''] },friendIDD:{$cond: { if: { $in: [ "$_id",  []  ] }, then: true, else: false }}};
+				select2={username:1,name:1,email:1,location:1,fullno:1,mobile:1,ccode:1,count:"count",friendID:{$cond: { if: { $in: [ "$_id",  [] ] }, then: true, else: false }}};
+  	  	}
+  	  	let query = [
+	  	  	{
+	  	  		$facet:{
+	  	  			count:[
+	  	  			   {
+	  	  			   	$match:match
+						},
+	  	  			   {
+	  	  			   	  $project:select2
+						},
+					 	{$match:{friendID:false}}, 
+	  	  			   {
+			             $group: {
+			               _id: '$count',
+			               total: { $sum: 1 }
+			             }
+			           }
+	  	  			],
+	  	  			userList:[
+	  	  			   {
+	  	  			 	  $match:match
+						},
+	  	  			   {
+	  	  			   	  $project:select
+						},
+	  	  			   { $skip: offset },
+					   { $limit: limit },
+	  	  			]
+	  	  		}
+	  	  	}
+			]; 
 			
-	// 		  User.aggregate(query, async (err, userList) => {
-	// 			  let UserDataList = await _get_user_list(userList1);
+			  User.aggregate(query, async (err, userList) => {
+				  let UserDataList = await _get_user_list(userList1);
 
-	// 			  if (err) res.json(this.response({ err: err, message: error.oops() }));
-	// 			  else {
-	// 				  let total = (UserDataList.length > 0) ? userList[0].count[0].total : 0;
-	// 				  if (UserDataList.length > 0) {
-	// 					  let userListData = await _check_friend_status(UserDataList);
-	// 					  return res.json(this.response({ data: { users: UserDataList, total: total }, message: "User found" }));
-	// 				  } else {
-	// 					  return res.json(this.response({ data: { users: UserDataList, total: total }, message: "User Not found" }));
-	// 				  }
-	// 			  }
-	// 		  });
-	// 	  });	
+				  if (err) res.json(this.response({ err: err, message: error.oops() }));
+				  else {
+					  let total = (UserDataList.length > 0) ? userList[0].count[0].total : 0;
+					  if (UserDataList.length > 0) {
+						  let userListData = await _check_friend_status(UserDataList);
+						  return res.json(this.response({ data: { users: UserDataList, total: total }, message: "User found" }));
+					  } else {
+						  return res.json(this.response({ data: { users: UserDataList, total: total }, message: "User Not found" }));
+					  }
+				  }
+			  });
+		  });	
 
-	// }
+	}
 	/**this method is used to get all list of users
     * method : GET
     * endpoint: /api/get-all-user

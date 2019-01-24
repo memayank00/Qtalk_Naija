@@ -1064,77 +1064,77 @@ class FriendController extends App {
     * method : GET
     * endpoint: /api/get-friends
     */
-  //   unfriend(req,res){
-		// let obj  = req.body,
-		// 	user = req.user,
-		// 	_remove_friend_request = function(obj) {
-		// 		return new Promise((resolve, reject) => {
-		// 			//resolve({"dsfds":"drfesdf"})
-		// 			let query =[
-		// 				{
-		// 					$match:{$or:[
-		// 						{"type" : "Friend", to_userId:ObjectId(obj.friendId),from_userId:ObjectId(user._id)},
-		// 						{"type" : "Friend", from_userId:ObjectId(obj.friendId),to_userId:ObjectId(user._id)}
-		// 					]
-		// 				  }
-		// 				},
-		// 				{$project:{type:1,array:"fix"}},
-		// 				{$group : {
-		// 				    _id: "$array",
-		// 				    ids: { $addToSet: "$_id" }
-		// 			    }}
-		// 			];
-		// 			Request.aggregate(query,(err,request)=>{
-		// 				//console.log('request----- ',request);
-		// 				if(request[0] && request[0].ids.length>0){
-		// 					//console.log('request----- ',request[0].ids);
-		// 					/*write code to remove request*/
-		// 					Request.remove({_id:request[0].ids},(err,remove)=>{
-		// 						console.log('remove-- ',remove.result);
-		// 					})
-		// 				}
-		// 				resolve(null);
-		// 			})
-		// 		});
-		// 	},
-		// 	_remove_from_own = function(obj) {
-		// 		return new Promise((resolve, reject) => {
-		// 			User.update(
-		// 			  {_id: user._id },
-		// 			  { $pull: { friends: { user_id: ObjectId(obj.friendId) } } }
-		// 			,(err,update)=>{
-		// 				if(err) reject('err');
-		// 				else{
-		// 					resolve(null);
-		// 				}
-		// 			})
-		// 		});
-		// 	},
-		// 	_remove_from_other = function(obj){
-		// 		return new Promise((resolve, reject) => {
-		// 			User.update(
-		// 			  {_id: obj.friendId },
-		// 			  { $pull: { friends: { user_id: ObjectId(user._id) } } }
-		// 			,(err,update)=>{
-		// 				if(err) reject('err');
-		// 				else{
-		// 					resolve('user unfriend successfully.');
-		// 				}
-		// 			})
-		// 		});
-		// 	};
+    unfriend(req,res){
+		let obj  = req.body,
+			user = req.user,
+			_remove_friend_request = function(obj) {
+				return new Promise((resolve, reject) => {
+					//resolve({"dsfds":"drfesdf"})
+					let query =[
+						{
+							$match:{$or:[
+								{"type" : "Friend", to_userId:ObjectId(obj.friendId),from_userId:ObjectId(user._id)},
+								{"type" : "Friend", from_userId:ObjectId(obj.friendId),to_userId:ObjectId(user._id)}
+							]
+						  }
+						},
+						{$project:{type:1,array:"fix"}},
+						{$group : {
+						    _id: "$array",
+						    ids: { $addToSet: "$_id" }
+					    }}
+					];
+					Request.aggregate(query,(err,request)=>{
+						//console.log('request----- ',request);
+						if(request[0] && request[0].ids.length>0){
+							//console.log('request----- ',request[0].ids);
+							/*write code to remove request*/
+							Request.remove({_id:request[0].ids},(err,remove)=>{
+								console.log('remove-- ',remove.result);
+							})
+						}
+						resolve(null);
+					})
+				});
+			},
+			_remove_from_own = function(obj) {
+				return new Promise((resolve, reject) => {
+					User.update(
+					  {_id: user._id },
+					  { $pull: { friends: { user_id: ObjectId(obj.friendId) } } }
+					,(err,update)=>{
+						if(err) reject('err');
+						else{
+							resolve(null);
+						}
+					})
+				});
+			},
+			_remove_from_other = function(obj){
+				return new Promise((resolve, reject) => {
+					User.update(
+					  {_id: obj.friendId },
+					  { $pull: { friends: { user_id: ObjectId(user._id) } } }
+					,(err,update)=>{
+						if(err) reject('err');
+						else{
+							resolve('user unfriend successfully.');
+						}
+					})
+				});
+			};
 
-		// (async ()=>{
-		// 	try {
-		// 		let _remove_friend = await _remove_friend_request(obj),
-		// 		    _remove_own    = await _remove_from_own(obj),
-		// 		    _remove_other  = await _remove_from_other(obj);
-		// 		return res.json(this.response({ data:_remove_other, message: "success" }));
-		// 	}catch(e){
-		// 		res.json(this.response({ err: err, message: error.oops() }));
-		// 	}
-		// })();
-  //   }
+		(async ()=>{
+			try {
+				let _remove_friend = await _remove_friend_request(obj),
+				    _remove_own    = await _remove_from_own(obj),
+				    _remove_other  = await _remove_from_other(obj);
+				return res.json(this.response({ data:_remove_other, message: "success" }));
+			}catch(e){
+				res.json(this.response({ err: err, message: error.oops() }));
+			}
+		})();
+    }
 
   //   asyncAwait(req,res){
 

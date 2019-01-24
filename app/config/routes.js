@@ -113,7 +113,7 @@ class AppRouter {
         this.router.post('/cancle-friend-request', this.call['frontend']['FriendController'].cancleFriendRequest);
         this.router.get('/friend-list', this.call['frontend']['FriendController'].friendList);
         this.router.get('/get-friends', this.call['frontend']['FriendController'].getFriends);
-        //this.router.post('/unfriend', this.call['frontend']['FriendController'].unfriend);
+        this.router.post('/unfriend', this.call['frontend']['FriendController'].unfriend);
         /*Track List routes*/
         //this.router.get('/get-all-track-user', this.call['frontend']['MapController'].getAllTrackUser);
         this.router.post('/send-track-request', this.call['frontend']['MapController'].sendTrackRequest);

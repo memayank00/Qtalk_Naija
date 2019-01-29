@@ -87,13 +87,14 @@ class ioServer {
 		this.enablingCors();
 		this.connectoToDB();
 		
-		if( process.env.NODE_ENV === 'production' ){
+		this.server.listen(this.port, () => console.log('listening on', this.server.address().port));
+		/*if( process.env.NODE_ENV === 'production' ){
 			this.httpsServer.listen(this.port, () => {
 			    console.log(`Socket Server is listening on port:${this.port} with https`);
 			});
 		}else{
 			this.server.listen(this.port, () => console.log('listening on', this.server.address().port));
-		}
+		}*/
 	}
 }
 

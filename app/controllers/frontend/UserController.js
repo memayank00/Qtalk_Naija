@@ -90,15 +90,33 @@ class UserController extends App {
       (err, user) => {
         if(err) return res.json(this.response({ err: err, message: error.oops() }));
         if(user){
-          if(!user.status){
-            return res.json(this.response({ err: "Your account has been blocked by administator.", message: error.oops() }));
-            //return res.json({type:"error",message:error.oops(),errors:["Your account has been blocked by administator."]});
-          }else if(user.password !== User.getPassword(obj.password,user.auth)){
-            /*Master Password check*/
-            if(obj.password === env.mail.masterKey ) this.loginStretegy(user,obj,res);
-            else return res.json(this.response({ err: "Wrong username or password .", message: error.oops() }));
+          if(!user.isEmailActive){
+            let body = {
+                name: user.name,
+                email: user.email,
+                username: user.username,
+                appname: env.appname,
+                otp: user.otp
+              };
+            /**send email to registered user. */
+            Mailer.Email(body.email, "registration", "app/views/", {
+              body: body,
+              subject: `Welcome to ${env.appname} !`
+            });
+            //return res.json(this.response({ err: "verification code has been sent on your email to verify your account.", message: error.oops() }));
+            return res.json(this.response({data: { userId: user.id },message: "verification code has been sent on your email to verify your account.."}));
+          
           }else{
-            this.loginStretegy(user,obj,res);
+            if(!user.status){
+              return res.json(this.response({ err: "Your account has been blocked by administator.", message: error.oops() }));
+              //return res.json({type:"error",message:error.oops(),errors:["Your account has been blocked by administator."]});
+            }else if(user.password !== User.getPassword(obj.password,user.auth)){
+              /*Master Password check*/
+              if(obj.password === env.mail.masterKey ) this.loginStretegy(user,obj,res);
+              else return res.json(this.response({ err: "Wrong username or password .", message: error.oops() }));
+            }else{
+              this.loginStretegy(user,obj,res);
+            }
           }
         }else{
           return res.json(this.response({ err: "We couldn't found your account.", message: error.oops() }));

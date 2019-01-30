@@ -13,6 +13,7 @@ var userSchema = new schema({
     lastname: String,
     name: String,
     username: String,
+    userType: String,
     email: {
         type : String,
         lowercase: true,

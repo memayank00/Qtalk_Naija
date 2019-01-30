@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>registration</title>
+</head>
+
+<style>
+/* font seciton */
+@import url('https://fonts.googleapis.com/css?family=Caveat:400,700&subset=cyrillic,latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Caveat:400,700|Lobster+Two:400,400i,700,700i&subset=cyrillic,latin-ext');
+
+
+
+
+.page_wrapper{
+    border: 0px solid;
+}
+
+.content_section{
+    border : 0px solid purple;
+    width: 60%;
+    margin: 0 auto;
+    box-shadow: 0px 0px 5px #d9d9d9;
+}
+
+.header_section{
+    border: 0px solid blue;
+    background-color: #99d6ff;
+    padding: 10px 0;
+}
+
+.header_section_heading{
+    text-transform: capitalize;
+    /*padding: 16px 10px;*/
+    padding: 15px 0;
+    text-align: center;
+    font-style: italic;
+    font-family: 'Lobster Two', cursive;
+    font-size: 250%;
+    letter-spacing: .2rem;
+    /*color: #85adad;*/
+    color: #cccc00;
+    text-shadow: 2px 3px 3px black;
+}
+
+
+.body_section{
+    border: 0px solid red;
+    font-size: 120%;
+    padding: 10px 10px ;
+    /*background-image: linear-gradient(to right , #ebebe0 , #ebebe0 , #f5f5ef);*/
+    background-color: #ebebe0;
+}
+.body_section_content{
+    border: 0px solid blue;
+    width: 80%;
+    padding-left: 10px;
+    margin-left: 20px;
+    font-style: italic;
+    font-family: 'Caveat', cursive;
+    font-size: 120%;
+    letter-spacing: .1rem;
+    font-weight: 500;
+}
+
+.text{
+    text-transform: capitalize; 
+    padding-left: 10px;
+}
+.text-1{
+    padding-left: 20px;
+}
+
+/*.upper{
+    text-transform: uppercase;
+}*/
+
+.footer_section{
+    border: 0px solid green;
+    padding: 1px 10px ;
+    font-size: 120%;
+    font-style: italic;
+    background-color: #99d6ff;
+}
+
+
+</style>
+<body>
+
+<div class="page_wrapper">
+
+    <div class="content_section">
+
+    <div class="header_section"> 
+
+        <h1 class="header_section_heading"> qtalk naija</h1>
+     </div>
+
+    <div class="body_section">
+    <div class="body_section_content">
+        <p class="text"> hello {{body.name}}, </p>
+        <p class="text ">Congratulations!  You’re now registered with {{body.appname}}.</p>
+        <p class="text ">Your username is {{body.username}} </p>
+        <p class="text ">Find the below OTP to verify your {{body.appname}} account.</p>
+        <p class="text">{{body.otp}}</p>
+    </div>
+    </div>
+
+
+    <div class="footer_section"> 
+    <div class="body_section_content">
+        <p class="text"> thansk</p>
+        <p class="text">qtalk naija team</p>
+    </div>
+    </div>
+</div>
+</div>
+    
+</body>
+</html>

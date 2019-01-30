@@ -86,7 +86,7 @@ class UserController extends App {
     }
 
     User.findOne({$and:match},
-      {email:1,name:1,auth:1,status:1,firstname:1,lastname:1,password:1,username:1,mobile:1,isEmailActive:1,profilePicture:1},
+      {email:1,name:1,auth:1,status:1,firstname:1,lastname:1,password:1,username:1,mobile:1,isEmailActive:1,profilePicture:1,otp:1},
       (err, user) => {
         if(err) return res.json(this.response({ err: err, message: error.oops() }));
         if(user){
@@ -103,8 +103,8 @@ class UserController extends App {
               body: body,
               subject: `Welcome to ${env.appname} !`
             });
-            //return res.json(this.response({ err: "verification code has been sent on your email to verify your account.", message: error.oops() }));
-            return res.json(this.response({data: { userId: user.id },message: "verification code has been sent on your email to verify your account.."}));
+            return res.json(this.response({ err: "verification code has been sent on your email to verify your account.", message: error.oops() }));
+            //return res.json(this.response({data: { userId: user.id },message: "verification code has been sent on your email to verify your account.."}));
           
           }else{
             if(!user.status){

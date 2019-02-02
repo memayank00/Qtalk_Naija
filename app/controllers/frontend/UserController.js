@@ -18,6 +18,7 @@ const path = require("path"),
   shared = require("../../config/libs/shared"),
   Conversation = require(path.resolve("./app/models/Conversation")),
   Post = require(path.resolve("./app/models/post")),
+  Request = require(path.resolve("./app/models/Request")),
   CLOUDINARY = require(path.resolve('./app/config/libs/cloudinary')),
   User = require(path.resolve("./app/models/User"));
 //OTP  = require(path.resolve("./app/models/OTP"));
@@ -86,7 +87,7 @@ class UserController extends App {
     }
 
     User.findOne({$and:match},
-      {email:1,name:1,auth:1,status:1,firstname:1,lastname:1,password:1,username:1,mobile:1,isEmailActive:1,profilePicture:1,otp:1},
+      {email:1,name:1,auth:1,status:1,firstname:1,lastname:1,password:1,username:1,mobile:1,isEmailActive:1,profilePicture:1,otp:1,userType:1},
       (err, user) => {
         if(err) return res.json(this.response({ err: err, message: error.oops() }));
         if(user){
@@ -127,7 +128,7 @@ class UserController extends App {
   /*loginStretegy is a common method which is called from two palce in login api*/
   loginStretegy(user,obj,res){
     if(user.isEmailActive){
-      let _user = {_id:user._id, name:user.name, email:user.email,username:user.username ,mobile:user.mobile,profilePicture:user.profilePicture,firstname:user.firstname,lastname:user.lastname};
+      let _user = {_id:user._id, name:user.name, email:user.email,username:user.username ,mobile:user.mobile,profilePicture:user.profilePicture,firstname:user.firstname,lastname:user.lastname,userType:user.userType};
       let token = jwt.sign(_user, env.secret, {expiresIn: '14 days'});
       //console.log('token-- ',token)
       _user['token'] = token;
@@ -135,8 +136,9 @@ class UserController extends App {
             console.log("device token appear-----------")
             this.updateDeviceToken(obj);
           }
-      this.updateLoginTime(obj);    
-      return res.json(this.response({ data:_user,token:token , mobileUrl:'https://bit.ly/2AUVhbe', message: "Your credentials have been verified." }));
+      this.updateLoginTime(obj);
+      return res.json(this.response({ data:_user,token:token , mobileUrl:'https://bit.ly/2AUVhbe', message: "Your credentials have been verified." }));    
+      //return res.json(this.response({ data:_user,token:token , mobileUrl:'https://bit.ly/2AUVhbe', message: "Your credentials have been verified." }));
       //return res.json({type:"success",message:"Your credentials have been verified.",data:_user,token:token});
     }else{
       return res.json(this.response({ err: "Please verify your email.", message: error.oops() }));
@@ -599,6 +601,7 @@ class UserController extends App {
    */
   otherUserDetails(req, res) {
     let obj = req.query,
+
       match = { _id: obj._id },
       project = {
         _id: 1,
@@ -622,8 +625,24 @@ class UserController extends App {
           }
         });
       }),
-      /*to get user add notes*/
-      _getUserNotes = new Promise((resolve, reject) => {
+      /*to get user is friend or not*/
+       _getFriendOrNot = new Promise((resolve, reject) => {
+        match = { 
+          $or:[
+            {$and:[{to_userId:obj._id},{from_userId:req.user._id},{type : "Friend"}]},
+            {$and:[{from_userId:obj._id},{to_userId:req.user._id},{type : "Friend"}]}
+          ] 
+        };
+        project = {"type":1, "status": 1 };
+        Request.find(match, project, (err, result) => {
+          if (err) {
+            reject(err);
+          } else {
+            resolve({"Friend":result});
+          }
+        });
+      });
+     /* _getUserNotes = new Promise((resolve, reject) => {
         match = { _id: req.user._id, "userNotes.user_id": ObjectId(obj._id) };
         project = { "userNotes.$": 1 };
         User.findOne(match, project, (err, result) => {
@@ -633,9 +652,9 @@ class UserController extends App {
             resolve(result);
           }
         });
-      });
+      });*/
 
-    Promise.all([_otherUser, _getUserNotes])
+    Promise.all([_otherUser, _getFriendOrNot])
       .then(result => {
         return res.json(this.response({ data: result, message: "Success" }));
       })

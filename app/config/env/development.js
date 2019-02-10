@@ -85,6 +85,11 @@ module.exports = {
    * we have used sendgrid
    * LINK:-https://sendgrid.com/
   */
+  /*sendgrid: {
+      key: "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",
+      username: "qtalk_naija",
+      password: "qtalknaija2019"
+  },*/
   sendgrid: {
       key: "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",
       username: "memayank01",
@@ -98,9 +103,9 @@ module.exports = {
       masterKey:"Qtalk_Naija2019#@"
   },
   cloudinary : {
-    cloud_name : "flexsin-node",
-    api_key : "932792458167458",
-    api_secret : "b2MogDO2Dm63pfl2CUH0JdUj3qo"
+    cloud_name : "dby3cbokv",
+    api_key : "623986951163464",
+    api_secret : "FtKtLX0TJ-Gv2dhB697FsAZ3JDY"
   },
   /*Distribution*/
   APPLE: {

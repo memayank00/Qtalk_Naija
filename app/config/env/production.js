@@ -98,9 +98,9 @@ module.exports = {
       masterKey:"Qtalk_Naija2019#@"
   },
   cloudinary : {
-    cloud_name : "flexsin-node",
-    api_key : "932792458167458",
-    api_secret : "b2MogDO2Dm63pfl2CUH0JdUj3qo"
+    cloud_name : "dby3cbokv",
+    api_key : "623986951163464",
+    api_secret : "FtKtLX0TJ-Gv2dhB697FsAZ3JDY"
   },
   /*Distribution*/
   APPLE: {

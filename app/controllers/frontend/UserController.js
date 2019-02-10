@@ -225,11 +225,12 @@ class UserController extends App {
     /**if no username */
     if (!obj.username) obj.username = obj.email;
     /* return error if either email or password is not present in the req.body */
-    if (!obj.email || !obj.username || !obj.mobile || !obj.ccode)
+    //if (!obj.email || !obj.username || !obj.mobile || !obj.ccode)
+    if (!obj.email || !obj.username || !obj.ccode)
       return res.json(
         this.response({
-          err: ["Email or Password or Mobile is Missing"],
-          message: "Email or Password or Mobile is Missing"
+          err: ["Email or Password is Missing"],
+          message: "Email or Password is Missing"
         })
       );
     /*set default profile image*/

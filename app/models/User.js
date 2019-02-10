@@ -22,12 +22,13 @@ var userSchema = new schema({
         unique: "This email address is already exists."
     },
     password: String,
-    mobile: {
+    mobile: String,
+    /*mobile: {
         type : String,
         trim : true,
         required: "Mobile number is required.", 
         unique: "This mobile number is already exists."
-    },
+    },*/
     fullno: String,
     ccode: String,
     otp:String,

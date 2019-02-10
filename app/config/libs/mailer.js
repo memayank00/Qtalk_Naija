@@ -61,9 +61,10 @@ exports.Email = (emailId, template, path, context) => {
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             //cb(error, undefined);
-            // console.log(error);
+             console.log("Error---- ",error);
             return false;
         } else {
+             console.log("info---- ",info);
             if(process.env.NODE_ENV !== 'test'){
               console.log(`Email send to -   ${emailId} by ${template} Template`);
             }

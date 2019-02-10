@@ -1085,12 +1085,14 @@ class FriendController extends App {
 					    }}
 					];
 					Request.aggregate(query,(err,request)=>{
-						//console.log('request----- ',request);
+						console.log('request----- ',request);
+						console.log('err----- ',err);
 						if(request[0] && request[0].ids.length>0){
 							//console.log('request----- ',request[0].ids);
 							/*write code to remove request*/
 							Request.remove({_id:request[0].ids},(err,remove)=>{
 								console.log('remove-- ',remove.result);
+								console.log('err1-- ',err);
 							})
 						}
 						resolve(null);
@@ -1103,6 +1105,7 @@ class FriendController extends App {
 					  {_id: user._id },
 					  { $pull: { friends: { user_id: ObjectId(obj.friendId) } } }
 					,(err,update)=>{
+						console.log('update-- ',update);
 						if(err) reject('err');
 						else{
 							resolve(null);
@@ -1116,6 +1119,7 @@ class FriendController extends App {
 					  {_id: obj.friendId },
 					  { $pull: { friends: { user_id: ObjectId(user._id) } } }
 					,(err,update)=>{
+						console.log('update--2 ',update);
 						if(err) reject('err');
 						else{
 							resolve('user unfriend successfully.');
@@ -1129,6 +1133,7 @@ class FriendController extends App {
 				let _remove_friend = await _remove_friend_request(obj),
 				    _remove_own    = await _remove_from_own(obj),
 				    _remove_other  = await _remove_from_other(obj);
+				    console.log("last----- ",_remove_other);
 				return res.json(this.response({ data:_remove_other, message: "success" }));
 			}catch(e){
 				res.json(this.response({ err: err, message: error.oops() }));

@@ -531,7 +531,7 @@ class FriendController extends App {
 				  	    		},
 				  	    		{
 				  	    			$project:{
-				  	    				name:1,profilePicture:1,location:{$ifNull:["$location",""]}
+				  	    				name:1,username:1,profilePicture:1,location:{$ifNull:["$location",""]}
 				  	    			}
 				  	    		}
 	  	    		]
@@ -862,7 +862,7 @@ class FriendController extends App {
 						  {$match:{$and:[
 						  	{_id: { $in: user_ids }}
 						  	]}},
-						  {$project:{name:1,profilePicture:1,mobile:1,fullno:1,location:{$ifNull:["$location",""]},cordinate:1,speed:1,speedTime:1}}
+						  {$project:{name:1,username:1,profilePicture:1,mobile:1,fullno:1,location:{$ifNull:["$location",""]},cordinate:1,speed:1,speedTime:1}}
 					  ];
 					 
 				  if (obj.text) {

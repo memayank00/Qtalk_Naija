@@ -256,11 +256,15 @@ class UserController extends App {
       /*function to check mobile is exist or not*/
       let _checkMobile = function(){
             return new Promise((resolve, reject) => {
-              User.findOne({mobile:obj.mobile},(err,result)=>{
-                console.log('result--- ',result);
-                if(result) reject('This mobile number is already registered.');
-                else resolve(null);
-              });   
+              if(obj.mobile){
+                User.findOne({mobile:obj.mobile},(err,result)=>{
+                  console.log('result--- ',result);
+                  if(result) reject('This mobile number is already registered.');
+                  else resolve(null);
+                });
+              }else{
+                resolve(null);
+              }   
             }); 
           },
       /*function to check email is exist or not*/

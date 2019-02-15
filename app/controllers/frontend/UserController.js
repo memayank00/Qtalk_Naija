@@ -238,7 +238,7 @@ class UserController extends App {
     /**mongo filter to search user by mobile or email id or username */
     let match = {
         $or: [
-          { mobile: obj.mobile },
+          //{ mobile: obj.mobile },
           { email: obj.email },
           { username: obj.username }
         ]
@@ -253,6 +253,10 @@ class UserController extends App {
         otp: 1,
         isEmailActive: 1
       };
+      /*check mobile is in request or not*/
+      if(obj.mobile){
+        match["$or"].push({ mobile: obj.mobile });
+      }
       /*function to check mobile is exist or not*/
       let _checkMobile = function(){
             return new Promise((resolve, reject) => {

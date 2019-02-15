@@ -257,6 +257,7 @@ class UserController extends App {
       let _checkMobile = function(){
             return new Promise((resolve, reject) => {
               User.findOne({mobile:obj.mobile},(err,result)=>{
+                console.log('result--- ',result);
                 if(result) reject('This mobile number is already registered.');
                 else resolve(null);
               });   

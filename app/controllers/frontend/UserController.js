@@ -226,7 +226,7 @@ class UserController extends App {
     if (!obj.username) obj.username = obj.email;
     /* return error if either email or password is not present in the req.body */
     //if (!obj.email || !obj.username || !obj.mobile || !obj.ccode)
-    if (!obj.email || !obj.username || !obj.ccode)
+    if (!obj.email || !obj.username)
       return res.json(
         this.response({
           err: ["Email or Password is Missing"],

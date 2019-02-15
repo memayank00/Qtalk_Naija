@@ -690,11 +690,13 @@ class FriendController extends App {
 			            {
 			                _id : user1._id,
 			                name : user1.name,
+			                username : user1.username,
 			                image : user1.profilePicture
 			            },
 			            {
 			                _id : user2._id,
 			                name : user2.name,
+			                username : user2.username,
 			                image : user2.profilePicture
 			            }
 			        ];

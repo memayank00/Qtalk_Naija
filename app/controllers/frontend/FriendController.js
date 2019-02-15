@@ -35,7 +35,7 @@ class FriendController extends App {
 		this.cancleFriendRequest = this.cancleFriendRequest.bind(this);
 		this.friendList = this.friendList.bind(this);
 		this.getFriends = this.getFriends.bind(this);
-		//this.unfriend = this.unfriend.bind(this);
+		this.unfriend = this.unfriend.bind(this);
 		this.push = new Push();
 	}
 

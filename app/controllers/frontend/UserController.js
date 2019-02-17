@@ -1165,7 +1165,7 @@ class UserController extends App {
     let obj = {
       otp: hash,
       resetKey: resestQuery,
-      otpValidity: _moment.futureDate(new Date(), "x", 120, "m")
+      otpValidity: _moment.futureDate(new Date(), "x", 120,  "m")
     };
     console.log('obj-- ',typeof reqData.email);
     if(this.__if_valid_email(reqData.email)){
@@ -1225,9 +1225,9 @@ class UserController extends App {
   }
 
   /* reset Password */
-  resetUserPassword(req,res){
+   resetUserPassword(req,res){
     let obj=req.body,
-    match = {$and: [{ 'resetPwd.otp': obj.otp}, { 'resetPwd.resetKey': obj.resetQuery }]},
+    match = {$and: [{ 'resetPwd.otp': obj.otp}, { 'email': obj.email }]},
     project = { resetPwd: 1,auth:1};
 
     User.findOne(match,project,(err,result)=>{
@@ -1239,27 +1239,59 @@ class UserController extends App {
       }
       if(result){
         let hashpassword = User.getPassword(obj.newPassword,result.auth);
-        if (result.resetPwd.otpValidity >= _moment.timestamp()) {
-          User.findOneAndUpdate({_id:ObjectId(result._id)},{
-            password:hashpassword,
-            $unset:{
-              resetPwd: 1,
-            }
-          },(err,updated)=>{
-            if(updated){
-              return res.json({ type: "success", message: "Your password has been changed." });
-            }else {
-              return res.json({ type: "error", message: "We couldn't perform this action. Please try again later." });
-            }
-          })
-        }else{
-          return res.json({ type: "error", message: "Your OTP and reset link has been expired" });
-        }
+        console.log("result----- ",result)
+        User.findOneAndUpdate({_id:ObjectId(result._id)},{
+          password:hashpassword,
+          $unset:{
+            resetPwd: 1,
+          }
+        },(err,updated)=>{
+          if(updated){
+            return res.json({ type: "success", message: "Your password has been changed." });
+          }else {
+            return res.json({ type: "error", message: "We couldn't perform this action. Please try again later." });
+          }
+        })
       }else{
         return res.json({ type: "error", message: "Your OTP is Invalid." });
       }
     })
   }
+  // resetUserPassword(req,res){
+  //   let obj=req.body,
+  //   match = {$and: [{ 'resetPwd.otp': obj.otp}, { 'resetPwd.resetKey': obj.resetQuery }]},
+  //   project = { resetPwd: 1,auth:1};
+
+  //   User.findOne(match,project,(err,result)=>{
+  //     if(err){
+  //       return  res.json({
+  //         type: "error",
+  //         message: err
+  //       });
+  //     }
+  //     if(result){
+  //       let hashpassword = User.getPassword(obj.newPassword,result.auth);
+  //       if (result.resetPwd.otpValidity >= _moment.timestamp()) {
+  //         User.findOneAndUpdate({_id:ObjectId(result._id)},{
+  //           password:hashpassword,
+  //           $unset:{
+  //             resetPwd: 1,
+  //           }
+  //         },(err,updated)=>{
+  //           if(updated){
+  //             return res.json({ type: "success", message: "Your password has been changed." });
+  //           }else {
+  //             return res.json({ type: "error", message: "We couldn't perform this action. Please try again later." });
+  //           }
+  //         })
+  //       }else{
+  //         return res.json({ type: "error", message: "Your OTP and reset link has been expired" });
+  //       }
+  //     }else{
+  //       return res.json({ type: "error", message: "Your OTP is Invalid." });
+  //     }
+  //   })
+  // }
 
   /* To get user devicetype and deviceid */
   getUserDeviceToken(req,res){

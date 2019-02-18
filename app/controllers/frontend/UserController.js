@@ -104,7 +104,7 @@ class UserController extends App {
               body: body,
               subject: `Welcome to ${env.appname} !`
             });
-            return res.json(this.response({ err: "verification code has been sent on your email to verify your account.", message: error.oops() }));
+            return res.json(this.response({ err: "verification code has been sent on your email to verify your account.", message: error.oops(),dataEmail:user.email,dataError:412 }));
             //return res.json(this.response({data: { userId: user.id },message: "verification code has been sent on your email to verify your account.."}));
           
           }else{

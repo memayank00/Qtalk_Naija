@@ -80,6 +80,7 @@ class UserController extends App {
     }else{
       /*Identify username or mobile*/
       if(isNaN(obj.username)){
+        obj['username'] = obj.username.toLowerCase();
         match.push({username : obj.username});
       }else{
         match.push({mobile : obj.username});
@@ -224,6 +225,8 @@ class UserController extends App {
     let obj = req.body;
     /**if no username */
     if (!obj.username) obj.username = obj.email;
+    /*make user in lower case*/
+    obj['username'] = obj.username.toLowerCase();
     /* return error if either email or password is not present in the req.body */
     //if (!obj.email || !obj.username || !obj.mobile || !obj.ccode)
     if (!obj.email || !obj.username)
@@ -335,6 +338,7 @@ class UserController extends App {
             /**if user is not founded in user collections  */
               let user = new User(obj);
               user.save((err, saved_user) => {
+                console.log(err)
                 if (err)
                   return res.json(this.response({ err: err, message: error.oops() }));
                 if (saved_user) {
@@ -363,6 +367,7 @@ class UserController extends App {
           });
           console.log("#####previous code End to here#####");
         }).catch((err)=>{
+          console.log(err)
         //res.json(this.response({ err: err, message: error.oops() }));
         //return res.json(this.response({ err: err, message: error.oops() }));
         return res.json(this.response({ err: err, message: err }));

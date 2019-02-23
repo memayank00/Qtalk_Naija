@@ -98,7 +98,7 @@ var userSchema = new schema({
  */
 userSchema.pre('save', function(next) {
     this.name     = [this.firstname, this.lastname].join(' ');
-    this.fullno   = [this.ccode, this.mobile].join('');
+    this.fullno   = (this.mobile)?[this.ccode, this.mobile].join(''):undefined;
     this.auth     = crypto.randomBytes(16).toString('hex');
     this.password = this.encryptPassword(this.password, this.auth);
     this.otp = (Math.floor(Math.random()*900000) + 100000).toString();

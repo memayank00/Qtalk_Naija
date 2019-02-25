@@ -337,6 +337,7 @@ class UserController extends App {
             } else {
             /**if user is not founded in user collections  */
               let user = new User(obj);
+              console.log("user--- ",user)
               user.save((err, saved_user) => {
                 console.log(err)
                 if (err)

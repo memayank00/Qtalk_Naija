@@ -97,7 +97,7 @@ class AppRouter {
         //this.router.get('/user-details', this.call['frontend']['UserController'].userDetails);
         //this.router.put('/update-user-details', this.call['frontend']['UserController'].updateUserDetails);
         //this.router.post('/update-profile-picture', this.call['frontend']['UserController'].updateProfilePicture);
-        //this.router.post('/change-password', this.call['frontend']['UserController'].changePassword);
+        this.router.post('/change-password', this.call['frontend']['UserController'].changePassword);
         //this.router.post('/update-user-location', this.call['frontend']['UserController'].updateUserLocation);
         //this.router.post('/toogle-user-availability', this.call['frontend']['UserController'].toogleUserAvailability);
         //this.router.get('/get-user-device-token', this.call['frontend']['UserController'].getUserDeviceToken);

@@ -21,7 +21,9 @@ module.exports = {
 
 		return new Promise((resolve, reject) => {
 			if(ext) options.public_id = _GLOBAL.random(12);
+			console.log("file-- ",file)
 			cloudinary.v2.uploader.upload(file, options, (err, result) => {
+			  	console.log("cloud error-- ",err)
 			  	if(err) reject(err); // if any error
 			  	if(result) resolve({public_id:result.public_id, url: result.url, secure_url: result.secure_url, bytes:result.bytes}); // if file uplaoded to cloud
 			});

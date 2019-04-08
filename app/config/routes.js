@@ -328,6 +328,23 @@ class AppRouter {
             //JWT.verify,
             this.call["backend"]["UserController"].getActiveUser
         );
+        /*New Routes*/
+        this.router.get(
+            "/get-admin-all-room",
+            //JWT.verify,
+            this.call["backend"]["AdminRoomController"].getAdminAllRoom
+        );
+        this.router.post(
+            "/update-admin-room",
+            //JWT.verify,
+            this.call["backend"]["AdminRoomController"].updateAdminRoom
+        );
+        this.router.post(
+            "/add-admin-room",
+            //JWT.verify,
+            this.call["backend"]["AdminRoomController"].addAdminRoom
+        );
+
     }
 
     init(){

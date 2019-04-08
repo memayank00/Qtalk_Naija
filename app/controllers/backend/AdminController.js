@@ -277,7 +277,7 @@ class AdminController extends App {
           };
 
           Admin.findOne(match, projection, (err, user) => {
-            console.log("user-- ",user);
+            //console.log("user-- ",user);
             if (err) callback({ message: ERROR.oops(), error: err }, null);
             if (!user || !user.matchPassword(obj.password))
               callback({ message: "Invalid Email/Username or Password" }, null);

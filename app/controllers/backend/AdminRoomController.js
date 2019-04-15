@@ -13,6 +13,7 @@ const crypto = require("crypto"),
   Admin = require(path.resolve("./app/models/admin")),
   Role = require(path.resolve("./app/models/role")),
   Room = require(path.resolve("./app/models/Room")),
+  User = require(path.resolve("./app/models/User")),
   Settings = require(path.resolve("./app/models/settings")),
   Requests = require(path.resolve("./app/models/requestsAdmin")),
   JWT = require(path.resolve("./app/config/libs/jwt")),
@@ -58,7 +59,7 @@ class AdminController extends App {
     })
   }
 
-  /** update admin room */
+  /** add admin room */
   addAdminRoom(req, res) {
     console.log(req.body);
     let obj = req.body;
@@ -77,6 +78,34 @@ class AdminController extends App {
       }
     })
   }
-}
 
+  /** add admin room */
+  addCounselor(req, res) {
+    console.log(req.body);
+    let obj = req.body;
+    obj["status"] = true;
+    obj["isEmailActive"] = true;
+    obj["userType"] = 'Counselor';
+    let user = new User(obj);
+    user.save((err,saved_obj)=>{
+       if(err)return res.status(412).json({type: "error",message: "Error during save.",error: ERROR.pull(err)}); 
+       else{
+          let body = {
+                name: obj.name,
+                email: obj.email,
+                username: obj.username,
+                appname: env.appname,
+                password: obj.password
+              };
+          /**send email to nonverified registered user. */
+          Mailer.Email(body.email, "counselor_registration", "app/views/", {
+            body: body,
+            subject: `Welcome to ${env.appname} !`
+          });
+          return res.json({type: "success",data: saved_obj});
+         }
+    })
+    
+  }
+}
 module.exports = AdminController;

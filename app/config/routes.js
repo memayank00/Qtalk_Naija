@@ -344,6 +344,11 @@ class AppRouter {
             //JWT.verify,
             this.call["backend"]["AdminRoomController"].addAdminRoom
         );
+        this.router.post(
+            "/add-counselor",
+            //JWT.verify,
+            this.call["backend"]["AdminRoomController"].addCounselor
+        );
 
     }
 

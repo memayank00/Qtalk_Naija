@@ -140,6 +140,9 @@ class AppRouter {
         this.router.get('/unread-notification-count', this.call['frontend']['NotificationController'].unreadNotificationCount);
         this.router.post('/update-notification-status', this.call['frontend']['NotificationController'].updateNotificationType);
         
+        /*Room Routes*/
+        this.router.get('/get-rooms', this.call['frontend']['RoomController'].getRooms);
+        this.router.post('/add-rooms', this.call['frontend']['RoomController'].addRooms);
         /*Testing Purpose*/
         //this.router.post('/async-await', this.call['frontend']['FriendController'].asyncAwait); 
         //this.router.post('/get-badge-count', this.call['frontend']['UserController'].getbadgeCount); 

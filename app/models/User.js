@@ -63,7 +63,12 @@ var userSchema = new schema({
         type: String,
         default:"false"
     },
-    //friends: Array
+    //useerRoom: Array
+    userRoom:[{
+        room_id : schema.Types.ObjectId,
+        name : String,
+        status : Boolean  
+    }],
     friends: [{
         user_id : schema.Types.ObjectId,
         name : String,

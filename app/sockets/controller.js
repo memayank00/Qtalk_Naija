@@ -249,6 +249,29 @@ class Sockets extends SocketController{
 				this.io.sockets.to(socket.id).emit("logout", { message: "You've been logged out." });
 			});
 
+			/*Join Room......*/
+			socket.on("room.join", (obj) => {
+				// request- {rooms :["A", "B"]}
+				
+				obj.rooms.forEach(function(room) {
+					console.log('room_name--', room);
+					socket.join(room);
+				});
+			});
+			/*Leave Room......*/
+			socket.on("room.leave", (obj) => {
+				// request- {room : "A"}
+				console.log('leave room--',obj.room)
+				socket.leave(obj.room);
+			});
+			/*Bulk Room Join......*/
+			// socket.on("room.bulk.join", (obj) => {
+				
+			// 		Format-
+			// 		obj = {convertationIds:['5c45ae523b4de660f7e4c889','5c234a44e306e331c0282de0','5c45948c4bcd80055636b948','5c2f5bbd8d9d677230955f0b','5c45928b4bcd80055636b947']}
+				
+			// 	socket.join(obj.convertationIds);
+			// });
 
 			/*Listeners......*/
 			socket.on("typing.listener", (writer) => {
@@ -276,7 +299,10 @@ class Sockets extends SocketController{
 					console.log("emit to ------ ",message.receiver);
 					this.io.sockets.to(message.receiver).emit("message.get", {message:message.name+" has sent you a mesage", data:message});
 				}
-
+				if(message.is_group === "1"){
+               	 console.log("------>>>>inside group message ")
+               	 this.io.to(message.room).emit("message.get", {message:`You have a group message.`, data:message});
+                }
 				if(!_.find(this.onlineUsers, {userId : message.receiver})){
 					/*User is online - send emit to user regarding a new message*/
 					console.log("send push to ------ ",message.receiver);

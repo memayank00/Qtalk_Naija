@@ -251,6 +251,7 @@ class Sockets extends SocketController{
 
 			/*Join Room......*/
 			socket.on("room.join", (obj) => {
+				console.log("room join---- ",obj);
 				// request- {rooms :["A", "B"]}
 				
 				obj.rooms.forEach(function(room) {
@@ -261,7 +262,7 @@ class Sockets extends SocketController{
 			/*Leave Room......*/
 			socket.on("room.leave", (obj) => {
 				// request- {room : "A"}
-				console.log('leave room--',obj.room)
+				console.log('leave room--',obj)
 				socket.leave(obj.room);
 			});
 			/*Bulk Room Join......*/
@@ -282,6 +283,13 @@ class Sockets extends SocketController{
 					this.io.sockets.to(writer.to).emit("typing.listener", { id: writer.to, from: writer.from ? writer.from:undefined, message:writer.name+" is typing...",status:writer.status});
 				}
 			});
+			
+			socket.on("message.group_send", (message) => {
+				console.log("------>>>>inside group message ",message)
+				if(message.is_group === "1"){
+               	 this.io.to(message.room).emit("message.group_get", {message:`You have a group message.`, data:message});
+                }
+			};
 
 			socket.on("message.send", (message) => {
 				//message = {};

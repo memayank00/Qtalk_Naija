@@ -26,7 +26,7 @@ const
                 type:String,
                 enum: ['Stop', 'Start'],    // this variable is used to identify chat is start or not
                 default: 'Stop'
-            }
+            }    
     },{
         timestamps : {
             createdAt: 'created_at',

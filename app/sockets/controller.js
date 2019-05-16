@@ -251,6 +251,7 @@ class Sockets extends SocketController{
 
 			/*Join Room......*/
 			socket.on("room.join", (obj) => {
+				console.log("room type---- ",typeof obj);
 				console.log("room join---- ",obj);
 				// request- {rooms :["A", "B"]}
 				

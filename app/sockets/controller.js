@@ -254,11 +254,11 @@ class Sockets extends SocketController{
 				console.log("room type---- ",typeof obj);
 				console.log("room join---- ",obj);
 				// request- {rooms :["A", "B"]}
-				
-				obj.rooms.forEach(function(room) {
+				socket.join(obj.rooms);
+				/*obj.rooms.forEach(function(room) {
 					console.log('room_name--', room);
 					socket.join(room);
-				});
+				});*/
 			});
 			/*Leave Room......*/
 			socket.on("room.leave", (obj) => {

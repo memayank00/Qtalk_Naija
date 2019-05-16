@@ -291,7 +291,7 @@ class Sockets extends SocketController{
 				if(message.is_group === "1"){
 					console.log("message room---->> ",message.room);
 					console.log("message room to ---->> ",this.io.to());
-               	 this.io.to(message.room).emit("message.group_get", {message:`You have a group message.`, data:message});
+               	 this.io.sockets.to(message.room).emit("message.group_get", {message:`You have a group message.`, data:message});
                 }
 			});
 

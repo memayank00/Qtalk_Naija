@@ -296,6 +296,26 @@ class Sockets extends SocketController{
                 }
 			});
 
+			socket.on("message.group_send_1", (message) => {
+				console.log("------>>>>inside group message ",message)
+				console.log("------>>>>typeof group message ",typeof message)
+				if(message.is_group === "1"){
+					
+					console.log("message room---->> ",message.room);
+				 this.io.sockets.in(message.room).emit("message.group_get_1", {message:`You have a group message.`, data:message});
+               	 //this.io.to(message.room).emit("message.group_get", {message:`You have a group message.`, data:message});
+                }
+			});
+
+			socket.on("message.group_send_2", (message) => {
+				console.log("------>>>>inside group message ",message)
+				console.log("------>>>>typeof group message ",typeof message)
+				if(message.is_group === "1"){
+					
+					console.log("message room---->> ",message.room);
+				 socket.broadcast.to(message.room).emit("message.group_get_2", {message:`You have a group message.`, data:message});
+                }
+			});
 			socket.on("message.send", (message) => {
 				//message = {};
 				//console.log('this.friends-------------->>>>>>>###', this.friends)
